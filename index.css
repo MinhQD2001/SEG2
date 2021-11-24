@@ -1,0 +1,82 @@
+h5 {
+  color: black;
+}
+
+a.nav-link {
+  color: white;
+  font-weight: lighter;
+}
+
+.promo-area {
+    background:#fbfbfb;
+    color: #fff;
+    padding: 40px 0 40px;
+  }
+  
+  .brands-area {
+    border-top:1px solid #e5e5e5;
+    border-bottom:1px solid #e5e5e5;
+    color: #fff;
+    padding: 20px 0 20px;
+  }
+  
+  .promo-area .zigzag-bottom, .brands-area .zigzag-bottom{background: #f4f4f4}
+  .single-promo {
+      font-size: 25px;
+      font-weight: 200;
+      padding: 20px 10px;
+      text-align: center;
+  }
+  .single-promo i {
+    font-size: 50px;
+  }
+  
+  .single-promo:hover {color: #fff;background: #222;}
+  .promo1 { background:#ee5057;}
+  .promo2 { background:#ffd900;}
+  .promo3 { background:#fa8072;}
+  .promo4 { background:#4abebd;}
+  .section-title {
+    font-family: "Raleway",sans-serif;
+    font-size: 50px;
+    font-weight: 100;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  
+
+  .laptop-discount {
+    background-image: url(img/laptop.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: inherit;
+    height: 80vh;
+  }
+
+  .drone-discount {
+    background-image: url(img/drone.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: inherit;
+    height: 80vh;
+  }
+
+  .help-center {
+    background-image: url(img/watch.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: inherit;
+    height: 80vh;
+  }
+
+  .category-name {
+    text-align: center;
+}
+
+.sale.col-md-2 {
+  box-shadow: 0px 0px 2px black;
+}
+
+.brand.col-md-2 {
+  align-self: center;
+}

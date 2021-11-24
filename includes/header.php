@@ -1,134 +1,201 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TDStore -Technology</title>
-
-    <!-- Google Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>TDStore</title>
+    <link rel="stylesheet" href="index.css">
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <link rel="stylesheet" href="dev/css/new-prism.css" />
+    <!-- Custom styles -->
   </head>
-  <header> <div class="header-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="user-menu">
-                    <ul>
-                        <li><a href="../index.php"><i class="fa fa-user"></i> My Account</a></li>
-                        <li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
-                        <li><a href="cart.html"><i class="fa fa-user"></i> My Cart</a></li>
-                        <li><a href="checkout.html"><i class="fa fa-user"></i> Checkout</a></li>
-                        <?php  if (isset($_SESSION['user_role'])): ?>
-                            <?php  if ($_SESSION['user_role'] < 3 && $_SESSION['user_role' > 0]): ?>
-                                    <li><a href="saler_Products.php"><i class="fa fa-sign-out"></i>Your Product</a></li>
-                            <?php  endif; ?>
-                            <?php  if ($_SESSION['user_role'] == 1]): ?>
-                                    <li><a href="manager.php"><i class="fa fa-sign-out"></i>Manager</a></li>
-                            <?php  endif; ?>
-                        <?php  endif; ?>
-                        <?php  if ($_SESSION["loggedin"] == true): ?>
-                                <li> <a href="profile.php?id=<?php echo $_SESSION['user_id']; ?>"><i class="fa fa-user"></i> <?php  echo htmlspecialchars($_SESSION["user_name"] . " ");?></li>
-                                <li><a href="logout.php"><i class="fa fa-sign-out"></i>Logout</a></li>
-                        <?php else: ?>
-                            <li>
-                                <a href="login.php"><i class="fa fa-user"></i> Login / Create Account<span class="sr-only">(current)</span></a>
-                            </li>
-                        <?php endif; ?>
-                    </ul>
-                </div>
-            </div>
-          
-            <div class="col-md-4">
-                <div class="header-right">
-                    <ul class="list-unstyled list-inline">
-                        <li class="dropdown dropdown-small">
-                            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">currency :</span><span class="value">USD </span><b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">USD</a></li>
-                                <li><a href="#">INR</a></li>
-                                <li><a href="#">GBP</a></li>
-                            </ul>
-                        </li>
+  <body>
 
-                        <li class="dropdown dropdown-small">
-                            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">language :</span><span class="value">English </span><b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">English</a></li>
-                                <li><a href="#">French</a></li>
-                                <li><a href="#">German</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+    <header>
+      <div class="site-header p-2 bg-dark text-white">
+        <div class="header-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6" style="align-self: center;">
+                      <i class="fas fa-box mx-2"></i> Free Shipping for orders over 50$
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="nav float-right justify-content-end">
+                            <li class="nav-item"><a class="nav-link" href="">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="">Help Center</a></li>
+                            <li class="nav-item"><a class="nav-link" href="">Call us</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div> <!-- End header area -->
-</header>
-<body>   
-    <div class="site-branding-area">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- Container wrapper -->
         <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="logo">
-                        <h1><a href="./"><img src="img/vertu.jpg"></a></h1>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="shopping-item">
-                        <a href="cart.html">Cart - <span class="cart-amunt">$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
-                    </div>
-                </div>
-            </div>
+          <!-- Toggle button -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <!-- Collapsible wrapper -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Navbar brand -->
+            <a class="navbar-brand mt-2 mt-lg-0" href="index.php">
+              <h2 class="font-weight-bold">TechStore</h2>
+            </a>
+            <form class="d-flex input-group w-auto">
+              <input
+                type="search"
+                class="form-control"
+                placeholder="Search..."
+                aria-label="Search"
+              />
+              <button
+                class="btn btn-outline-primary"
+                type="button"
+                data-mdb-ripple-color="dark"
+              >
+                Search  <i class="fas fa-search"></i>
+              </button>
+            </form>
+          </div>
+          <!-- Collapsible wrapper -->
+
+          <!-- Right elements -->
+
+           <!-- Left links -->
+            <ul class="navbar-nav flex-row d-none d-md-flex m-lg-2 mx-lg-4 gap-3">
+              <li class="nav-item">
+                <a class="nav-link" href="login.php"><i class="fas fa-user"></i> Log In </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-heart"></i> Favorites </a>
+              </li>
+            </ul>
+            <!-- Left links -->
+
+          <div class="d-flex align-items-center">
+            <!-- Icon -->
+            <a class="text-reset me-3" href="#">
+              <i class="fas fa-shopping-cart"></i>
+            </a>
+
+            <!-- Notifications -->
+            <a
+              class="text-reset me-3 dropdown-toggle hidden-arrow"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fas fa-bell"></i>
+              <span class="badge rounded-pill badge-notification bg-danger">1</span>
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <li>
+                <a class="dropdown-item" href="#">Some news</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Another news</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </li>
+            </ul>
+
+            <!-- Avatar -->
+            <a
+              class="dropdown-toggle d-flex align-items-center hidden-arrow"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                src="https://steamuserimages-a.akamaihd.net/ugc/974353381258701515/67DFC214C7166FAECF380BFACC10976AA2D86D1D/?imw=1024&imh=1024&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true"
+                class="rounded-circle"
+                height="25px"
+                width="25px"
+                alt=""
+                loading="lazy"
+              />
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <li>
+                <a class="dropdown-item" href="#">My profile</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Settings</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Logout</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Right elements -->
         </div>
-    </div> <!-- End site branding area -->
-    <div class="mainmenu-area">
+        <!-- Container wrapper -->
+      </nav>
+      
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #888888bd;">
         <div class="container">
-            <div class="row">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.php">Home</a></li>
-                        <li><a href="shop.php">Shop page</a></li>
-                        <li><a href="single-product.php">Single product</a></li>
-                        <li><a href="cart.php">Cart</a></li>
-                        <li><a href="checkout.php">Checkout</a></li>
-                        <li><a href="#">Category</a></li>
-                        <li><a href="#">Others</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
+          <ul class="navbar-nav gap-lg-5">
+            <li class="nav-item">
+              <a class="nav-link" href="ShopAll.php">Shop All</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Computer</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Tablets</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Drone & Camera</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Audio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Mobile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sale</a>
+            </li>
+          </ul>
+
         </div>
-    </div> <!-- End mainmenu area -->
-</html>
+      </nav>  
+      <!-- Navbar -->
+    </header>
