@@ -9,10 +9,49 @@
     }
   </style>
 
-  <div class="container">
+  <div class="container-fluid">
       <div class="row">
           <div class="col-md-2 pt-lg-5">
-            
+            <div class="container">
+            <div>
+              <h2 class="Filter m-lg-1" style="font-weight: lighter;">Filter by</h2>
+              <hr>
+            </div>
+            <h5 class="" style="font-weight: lighter;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseWidth"
+               aria-expanded="false" aria-controls="collapseWidth">
+                Collection    <i class="fa fa-plus float-end" aria-hidden="true"></i>                
+            </h5>
+            <div style="min-height: 120px;">
+              <div class="collapse collapse-vertical" id="collapseWidth" >
+                <div style="width: 300px;">
+                <ul class="navbar-nav m-lg-2">
+                  <li class="nav-item">
+                    <a class="nav-link text-black" href="#">Shop All</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-black" href="#">Computer</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-black" href="#">Tablets</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-black" href="#">Drone & Camera</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-black" href="#">Audio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-black" href="#">Mobile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-black" href="#">Sale</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <hr>
+            </div>
+            </div>
           </div>
           <div class="col-md-10">
               <!-- Để Product dưới đây -->

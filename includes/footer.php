@@ -17,7 +17,7 @@
 
 
 <!-- Footer -->
-    <footer class="text-center text-lg-start bg-light text-muted pt-lg-5 mt-lg-5">
+    <footer class="text-center text-lg-start bg-light text-muted">
   <!-- Section: Social media -->
   <section
     class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom" style="background-color: rgba(0, 0, 0, 0.05);"

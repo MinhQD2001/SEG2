@@ -120,9 +120,11 @@
 
 <div class="body-page" style="background-color: rgb(235, 231, 231);">
 
-  <div class="container p-lg-4"> <!-- Ad area -->
+
+<div class="Ad-area"> <!-- Ad area -->
+  <div class="container pt-lg-4 pb-3" style="max-width: max-content;"> 
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-lg-6">
         <div class="bg-image">
           <img
             src="https://f49-zpg.zdn.vn/1197879776714286550/5eb1b11c2aafe2f1bbbe.jpg"
@@ -142,7 +144,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-lg-6">
         <div class="bg-image">
           <img
             src="https://f43-zpg.zdn.vn/2035427347813886865/f631b6b72004e85ab115.jpg"
@@ -164,8 +166,8 @@
         </div>
       </div>
     </div>
-  </div> <!-- End Ad area -->
-
+  </div> 
+</div> <!-- End Ad area -->
 
 
   <div class="promo-area"> <!-- Promo area -->
@@ -434,7 +436,7 @@
 
 
 <div class="sale p-lg-5"> <!-- On Sale area -->
-  <div class="container bg-white">
+  <div class="container bg-white" style="max-width: max-content;">
     <div class="best-sellers m-lg-2">
       <div class="title pt-lg-5" style="text-align: center;">
         <h3 style="font-weight: inherit;">On Sale</h3>
@@ -538,7 +540,7 @@
 </div>
 
 <div class="brands-area"> <!--Brands area -->
-  <div class="container bg-white">
+  <div class="container bg-white" style="max-width: max-content;">
     <div class="brands m-lg-2 pb-lg-5">
       <div class="title pt-lg-5" style="text-align: center;">
         <h2 style="font-weight: bold; color: black;">Brands</h2>
@@ -593,8 +595,8 @@
   </div>
 </div> <!-- End brands area -->
 
-<div class="newsletter-area"> <!--newsletter area -->
-    <div class="container p-lg-5 mb-5" style="background-color: rgb(117,31,255)">
+<div class="newsletter-area pb-lg-5"> <!--newsletter area -->
+    <div class="container p-lg-5" style="background-color: rgb(117,31,255)">
         <div class="title text-white" style="text-align: center;
     font-weight: lighter;">
             <h3>Newsletter</h3>
