@@ -3,7 +3,13 @@
     include 'includes/header.php'; 
 ?>
 
-    <div
+<style>
+  img.brand {
+      padding: 20px;
+  }
+</style>
+<div class="Carousel">
+<div
     id="carouselCrossfade"
     class="carousel slide carousel-fade"
     data-mdb-ride="carousel"
@@ -117,6 +123,8 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+
+</div>
 
 <div class="body-page" style="background-color: rgb(235, 231, 231);">
 
@@ -449,6 +457,7 @@
               <a href="#!">
               </a>
             </div>
+            <hr>
             <div class="product-info" style="text-align: center;">
               <p>Product name</p>
               <p>Product Price</p>
@@ -460,6 +469,7 @@
               <a href="#!">
               </a>
             </div>
+            <hr>
             <div class="product-info" style="text-align: center;">
               <p>Product name</p>
               <p>Product Price</p>
@@ -471,6 +481,7 @@
               <a href="#!">
               </a>
             </div>
+            <hr>
             <div class="product-info" style="text-align: center;">
               <p>Product name</p>
               <p>Product Price</p>
@@ -482,6 +493,7 @@
               <a href="#!">
               </a>
             </div>
+            <hr>
             <div class="product-info" style="text-align: center;">
               <p>Product name</p>
               <p>Product Price</p>
@@ -493,6 +505,7 @@
               <a href="#!">
               </a>
             </div>
+            <hr>
             <div class="product-info" style="text-align: center;">
               <p>Product name</p>
               <p>Product Price</p>
@@ -504,6 +517,7 @@
               <a href="#!">
               </a>
             </div>
+            <hr>
             <div class="product-info" style="text-align: center;">
               <p>Product name</p>
               <p>Product Price</p>
@@ -549,42 +563,42 @@
         <div class="row">
           <div class="brand col-md-2">
             <div class="bg-image hover-overlay hover-zoom">
-              <img src="https://f43-zpg.zdn.vn/2293106579913924457/658628c8caa401fa58b5.jpg" class="w-100"/>
+              <img src="https://f43-zpg.zdn.vn/2293106579913924457/658628c8caa401fa58b5.jpg" class="brand w-100"/>
               <a href="#!">
               </a>
             </div>
           </div>
           <div class="brand col-md-2">
             <div class="bg-image hover-overlay hover-zoom">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_pX6Ejet3VKzZfvq2tEjAFve4tdVRzwmHCCltgvw7vUr7EKgOIJYKN1bBPztc-YD-zqk&usqp=CAU" class="w-100"/>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_pX6Ejet3VKzZfvq2tEjAFve4tdVRzwmHCCltgvw7vUr7EKgOIJYKN1bBPztc-YD-zqk&usqp=CAU" class="brand w-100"/>
               <a href="#!">
               </a>
             </div>
           </div>
           <div class="brand col-md-2">
             <div class="bg-image hover-overlay hover-zoom">
-              <img src="https://f34-zpg.zdn.vn/5370499978435700927/47371979fb15304b6904.jpg" class="w-100"/>
+              <img src="https://f34-zpg.zdn.vn/5370499978435700927/47371979fb15304b6904.jpg" class="brand w-100"/>
               <a href="#!">
               </a>
             </div>
           </div>
           <div class="brand col-md-2">
             <div class="bg-image hover-overlay hover-zoom">
-              <img src="https://b-f50-zpg.zdn.vn/1512156905263740802/ffff84b79ad8518608c9.jpg" class="w-100"/>
+              <img src="https://b-f50-zpg.zdn.vn/1512156905263740802/ffff84b79ad8518608c9.jpg" class="brand w-100"/>
               <a href="#!">
               </a>
             </div>
           </div>
           <div class="brand col-md-2">
             <div class="bg-image hover-overlay hover-zoom">
-              <img src="https://f50-zpg.zdn.vn/1695676508783595845/4c833eb821d7ea89b3c6.jpg" class="w-100"/>
+              <img src="https://f50-zpg.zdn.vn/1695676508783595845/4c833eb821d7ea89b3c6.jpg" class="brand w-100"/>
               <a href="#!">
               </a>
             </div>
           </div>
           <div class="brand col-md-2">
             <div class="bg-image hover-overlay hover-zoom">
-              <img src="https://prolap.vn/wp-content/uploads/Sony-vaio-logo.png" class="w-100"/>
+              <img src="https://prolap.vn/wp-content/uploads/Sony-vaio-logo.png" class="brand w-100"/>
               <a href="#!">
               </a>
             </div>
@@ -602,19 +616,23 @@
             <h3>Newsletter</h3>
             <p>Sign up to receive updates on new arrivals and special offers</p>
         </div>
+        <div class="container" style="padding-left: 15%;
+                                      padding-right: 15%;">
         <form class="Email p-lg-5 ml-5 mr-5">
             <p class="text-white">Email *</p>
             <div class="container">
                 <div class="row">
                     <div class="col-md-10 m-0 p-0">
-                        <input type="search" class="form-control rounded-7" placeholder="Email..." name="" value="">  
+                        <input type="search" class="form-control" placeholder="Email..." name="" value="" style="border-radius: 30px 0px 0px 30px; 
+                        font-size: larger">  
                     </div>
                     <div class="col-md-2 m-0 p-0">
-                        <button class="btn btn-black btn-rounded" type="">Subcribe</button>
+                        <button class="btn btn-black" style="border-radius: 0px 30px 30px 0px; font-size: inherit;" type="">Subcribe</button>
                     </div>
                 </div>
             </div>
         </form>
+        </div>
     </div>
 </div> <!-- End newsletter area -->
 

@@ -21,9 +21,9 @@
     <link rel="stylesheet" href="css/mdb.min.css" />
     <link rel="stylesheet" href="dev/css/new-prism.css" />
     <!-- Custom styles -->
+
   </head>
   <body>
-
     <header>
       <div class="site-header p-2 bg-dark text-white">
         <div class="header-bar">
@@ -67,17 +67,18 @@
             <a class="navbar-brand mt-2 mt-lg-0" href="index.php">
               <h2 class="font-weight-bold">TechStore</h2>
             </a>
-            <form class="d-flex input-group w-auto">
+            <form class="d-flex input-group w-auto m-3">
               <input
                 type="search"
                 class="form-control"
                 placeholder="Search..."
                 aria-label="Search"
+                style="border-radius: 30px 0px 0px 30px;"
               />
               <button
                 class="btn btn-outline-primary"
                 type="button"
-                data-mdb-ripple-color="dark"
+                data-mdb-ripple-color="dark" style="border-radius: 0px 30px 30px 0px;"
               >
                 Search  <i class="fas fa-search"></i>
               </button>
@@ -154,7 +155,7 @@
               aria-labelledby="navbarDropdownMenuLink"
             >
               <li>
-                <a class="dropdown-item" href="#">My profile</a>
+                <a class="dropdown-item" href="profile.php">My profile</a>
               </li>
               <li>
                 <a class="dropdown-item" href="#">Settings</a>
@@ -169,8 +170,22 @@
         <!-- Container wrapper -->
       </nav>
       
-      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #888888bd;">
-        <div class="container">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #c7c7c7bd;">
+        <div class="container gap-lg-5">
+          <h2 class="navbar-brand mb-0" href="#" style="font-weight: lighter; ">CATEGORIES</h2> <div class="vertical"></div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>          
+          <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav gap-lg-5">
             <li class="nav-item">
               <a class="nav-link" href="ShopAll.php">Shop All</a>
@@ -194,8 +209,7 @@
               <a class="nav-link" href="#">Sale</a>
             </li>
           </ul>
-
+          </div>
         </div>
-      </nav>  
-      <!-- Navbar -->
+      </nav>
     </header>

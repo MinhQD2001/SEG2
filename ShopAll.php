@@ -18,8 +18,8 @@
               <hr>
             </div>
             <h5 class="" style="font-weight: lighter;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseWidth"
-               aria-expanded="false" aria-controls="collapseWidth">
-                Collection    <i class="fa fa-plus float-end" aria-hidden="true"></i>                
+               aria-expanded="false" aria-controls="collapseWidth"> 
+                Collection    <i class="fa fa-plus float-end" aria-hidden="true"></i>      
             </h5>
             <div style="min-height: 120px;">
               <div class="collapse collapse-vertical" id="collapseWidth" >
@@ -71,6 +71,7 @@
                         <a href="#!">
                         </a>
                         </div>
+                        <hr>
                         <div class="product-info" style="text-align: center;">
                         <p>Product name</p>
                         <p>Product Price</p>
@@ -82,6 +83,7 @@
                         <a href="#!">
                         </a>
                         </div>
+                        <hr>
                         <div class="product-info" style="text-align: center;">
                         <p>Product name</p>
                         <p>Product Price</p>
@@ -93,6 +95,7 @@
                         <a href="#!">
                         </a>
                         </div>
+                        <hr>
                         <div class="product-info" style="text-align: center;">
                         <p>Product name</p>
                         <p>Product Price</p>
@@ -104,6 +107,7 @@
                         <a href="#!">
                         </a>
                         </div>
+                        <hr>
                         <div class="product-info" style="text-align: center;">
                         <p>Product name</p>
                         <p>Product Price</p>
