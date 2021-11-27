@@ -3,7 +3,7 @@
 	include 'classes/user.php';
 
 
-	if (isset($_POST['log_in'])){
+	if (isset($_POST['sign_in'])){
 		$email = $_POST['email'];
 		$password = $_POST['password'];
 		$user = new User($conn);

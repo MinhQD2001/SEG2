@@ -91,7 +91,11 @@
            <!-- Left links -->
             <ul class="navbar-nav flex-row d-none d-md-flex m-lg-2 mx-lg-4 gap-3">
               <li class="nav-item">
-                <a class="nav-link" href="login.php"><i class="fas fa-user"></i> Log In </a>
+                <?php if ($_SESSION['loggedin'] == true): ?>
+                  <a class="nav-link" href="#"><i class="fas fa-user"></i> <?php echo $_SESSION['user_name']; ?> </a>
+                <?php else: ?>
+                  <a class="nav-link" href="login.php"><i class="fas fa-user"></i> Log In </a>
+                <?php endif; ?>                
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#"><i class="fas fa-heart"></i> Favorites </a>
@@ -133,37 +137,39 @@
             </ul>
 
             <!-- Avatar -->
-            <a
-              class="dropdown-toggle d-flex align-items-center hidden-arrow"
-              href="#"
-              id="navbarDropdownMenuLink"
-              role="button"
-              data-mdb-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/974353381258701515/67DFC214C7166FAECF380BFACC10976AA2D86D1D/?imw=1024&imh=1024&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true"
-                class="rounded-circle"
-                height="25px"
-                width="25px"
-                alt=""
-                loading="lazy"
-              />
-            </a>
-            <ul
-              class="dropdown-menu dropdown-menu-end"
-              aria-labelledby="navbarDropdownMenuLink"
-            >
-              <li>
-                <a class="dropdown-item" href="profile.php">My profile</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Settings</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Logout</a>
-              </li>
-            </ul>
+            <?php if($_SESSION['loggedin'] == true): ?>
+              <a
+                class="dropdown-toggle d-flex align-items-center hidden-arrow"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="https://steamuserimages-a.akamaihd.net/ugc/974353381258701515/67DFC214C7166FAECF380BFACC10976AA2D86D1D/?imw=1024&imh=1024&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true"
+                  class="rounded-circle"
+                  height="25px"
+                  width="25px"
+                  alt=""
+                  loading="lazy"
+                />
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <li>
+                  <a class="dropdown-item" href="profile.php">My profile</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Settings</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="logout.php">Logout</a>
+                </li>
+              </ul>
+            <?php endif; ?>
           </div>
           <!-- Right elements -->
         </div>
