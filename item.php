@@ -122,7 +122,7 @@
      <div class="col-sm-6">
          <div class="item-info">
              <h2 class="text-black">HKI Tech Quadcopter Drone With 360 Camera & Controller</h2>
-             <p>Author: </p>
+             <p>Author: <span class="author-name" style="color: #b23cfd;"><strong> admin</strong></span></p>
              <!-- Nếu item mình add vô db thì xuất ra Author: TechStore 👈(ﾟヮﾟ👈) -->
              <p>Price: <span style="color: #b23cfd;"><strong>85<i class="fas fa-dollar-sign"></i></strong></span></p>
              <!-- Put Price here ＼(ﾟｰﾟ＼) -->
