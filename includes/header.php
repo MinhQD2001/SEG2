@@ -23,6 +23,16 @@
     <!-- Custom styles -->
 
   </head>
+  <style>
+    ul.navbar-nav li.nav-item a.nav-link:hover {
+    color: #793ea7;
+    font-weight: bolder;
+    }
+    a.nav-link:hover {
+      color: #b23cfd;
+      font-weight: bolder;
+    }
+  </style>
   <body>
     <header>
       <div class="site-header p-2 bg-dark text-white">

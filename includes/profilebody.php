@@ -13,9 +13,6 @@
     margin-right: 20%;
     }
 
-    ul.navbar-nav.gap-4 li.nav-item a.nav-link:hover {
-    color: #793ea7;
-    }
 
 </style>
 
