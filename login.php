@@ -2,6 +2,7 @@
 	include 'config.php';
 	include 'classes/user.php';
 
+
 	if (isset($_POST['log_in'])){
 		$email = $_POST['email'];
 		$password = $_POST['password'];
@@ -94,7 +95,7 @@
 		role="tabpanel"
 		aria-labelledby="tab-login"
 	>
-		<form>
+		<form id="login" action="login.php" method="POST">
 		<div class="text-center mb-3">
 			<p>Sign in with:</p>
 			<button type="button" class="btn btn-primary btn-floating mx-1">
@@ -118,13 +119,13 @@
 
 		<!-- Email input -->
 		<div class="form-outline mb-4">
-			<input type="email" id="loginName" class="form-control" />
-			<label class="form-label" for="loginName">Email or username</label>
+			<input name="email" type="email" id="loginName" class="form-control" />
+			<label class="form-label" for="loginName">Email</label>
 		</div>
 
 		<!-- Password input -->
 		<div class="form-outline mb-4">
-			<input type="password" id="loginPassword" class="form-control" />
+			<input name="password" type="password" id="loginPassword" class="form-control" />
 			<label class="form-label" for="loginPassword">Password</label>
 		</div>
 
@@ -151,7 +152,7 @@
 		</div>
 
 		<!-- Submit button -->
-		<button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+		<button name="sign_in" type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
 
 		<!-- Register buttons -->
 		<div class="text-center">
@@ -165,7 +166,7 @@
 		role="tabpanel"
 		aria-labelledby="tab-register"
 	>
-		<form>
+		<form id="register"  action="login.php" method="POST">
 		<div class="text-center mb-3">
 			<p>Sign up with:</p>
 			<button type="button" class="btn btn-primary btn-floating mx-1">
@@ -188,32 +189,32 @@
 		<p class="text-center">or:</p>
 
 		<!-- Name input -->
-		<div class="form-outline mb-4">
+		<!-- <div class="form-outline mb-4">
 			<input type="text" id="registerName" class="form-control" />
 			<label class="form-label" for="registerName">Name</label>
-		</div>
+		</div> -->
 
 		<!-- Username input -->
 		<div class="form-outline mb-4">
-			<input type="text" id="registerUsername" class="form-control" />
+			<input name="username" type="text" id="registerUsername" class="form-control" />
 			<label class="form-label" for="registerUsername">Username</label>
 		</div>
 
 		<!-- Email input -->
 		<div class="form-outline mb-4">
-			<input type="email" id="registerEmail" class="form-control" />
+			<input name="email" type="email" id="registerEmail" class="form-control" />
 			<label class="form-label" for="registerEmail">Email</label>
 		</div>
 
 		<!-- Password input -->
 		<div class="form-outline mb-4">
-			<input type="password" id="registerPassword" class="form-control" />
+			<input name="password" type="password" id="registerPassword" class="form-control" />
 			<label class="form-label" for="registerPassword">Password</label>
 		</div>
 
 		<!-- Repeat Password input -->
 		<div class="form-outline mb-4">
-			<input type="password" id="registerRepeatPassword" class="form-control" />
+			<input name="re_password" type="password" id="registerRepeatPassword" class="form-control" />
 			<label class="form-label" for="registerRepeatPassword">Repeat password</label>
 		</div>
 
@@ -233,7 +234,7 @@
 		</div>
 
 		<!-- Submit button -->
-		<button type="submit" class="btn btn-primary btn-block mb-3">Sign in</button>
+		<button name="sign_up" type="submit" class="btn btn-primary btn-block mb-3">Sign Up</button>
 		</form>
 	</div>
 	</div>
