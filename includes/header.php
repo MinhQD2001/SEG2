@@ -172,7 +172,7 @@
       
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #c7c7c7bd;">
-        <div class="container gap-lg-5">
+        <div class="container gap-lg-4">
           <h2 class="navbar-brand mb-0" href="#" style="font-weight: lighter; ">CATEGORIES</h2> <div class="vertical"></div>
           <button
             class="navbar-toggler"
@@ -186,7 +186,7 @@
             <i class="fas fa-bars"></i>
           </button>          
           <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav gap-lg-5">
+          <ul class="navbar-nav gap-4">
             <li class="nav-item">
               <a class="nav-link" href="ShopAll.php">Shop All</a>
             </li>
@@ -204,6 +204,12 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Mobile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">T.V & Cinema</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Wearable Tech</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Sale</a>
