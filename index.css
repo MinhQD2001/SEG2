@@ -31,11 +31,18 @@ a.nav-link {
     font-size: 50px;
   }
   
-  .single-promo:hover {color: #fff; background-color: rgb(109, 17, 214);}
+  .single-promo:hover {
+    color: #fff; 
+    background: linear-gradient(
+      45deg,
+      rgba(29, 236, 197, 0.7),
+      rgba(91, 14, 214, 0.7) 100%
+    );
+  }
   .promo1 { background:#f73c45;}
   .promo2 { background:#ffd900;}
   .promo3 { background:#fa8072;}
-  .promo4 { background:#4abebd;}
+  .promo4 { background:#338cc7;}
   .section-title {
     font-family: "Raleway",sans-serif;
     font-size: 50px;

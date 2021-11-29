@@ -7,58 +7,123 @@
     .sale.col-md-3 {
     box-shadow: 0px 0px 1px black;
     }
+
+    .col-md-2.pt-lg-5.mt-lg-5 {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    }
   </style>
 
-  <div class="container-fluid">
-      <div class="row">
-          <div class="col-md-2 pt-lg-5">
-            <div class="container">
-            <div>
-              <h2 class="Filter m-lg-1" style="font-weight: lighter;">Filter by</h2>
-              <hr>
+  <div class="container-fluid mt-lg-3" >
+  <div class="row">
+  <div class="col-md-3 pt-lg-5 mt-lg-5">
+    <div class="container" >
+      <div>
+        <h2 class="Filter m-lg-1" style="font-weight: lighter;">Filter By</h2>
+          <hr>
+        </div>
+<div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingOne">
+      <button
+        class="accordion-button collapsed"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#flush-collapseOne"
+        aria-expanded="false"
+        aria-controls="flush-collapseOne"
+      >
+        Collection
+      </button>
+    </h2>
+    <div
+      id="flush-collapseOne"
+      class="accordion-collapse collapse"
+      aria-labelledby="flush-headingOne"
+      data-mdb-parent="#accordionFlushExample"
+    >
+      <div class="accordion-body">
+      <ul class="navbar-nav m-lg-2">
+        <li class="nav-item">
+          <a class="nav-link text-black" href="#">- Shop All</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-black" href="#">- Computer</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-black" href="#">- Tablets</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-black" href="#">- Drone & Camera</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-black" href="#">- Audio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-black" href="#">- Mobile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-black" href="#">- T.V & Cinema</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-black" href="#">- Wearable Tech</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-black" href="#">- Sale</a>
+        </li>
+      </ul>                  
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingTwo">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#flush-collapseTwo"
+          aria-expanded="false"
+          aria-controls="flush-collapseTwo"
+        >
+          Prices
+        </button>
+      </h2>
+      <div
+        id="flush-collapseTwo"
+        class="accordion-collapse collapse"
+        aria-labelledby="flush-headingTwo"
+        data-mdb-parent="#accordionFlushExample"
+      >
+        <div class="accordion-body">
+        <ul class="navbar-nav m-lg-2">
+        <label class="form-label" for="customRange1">Range 50$ - 100$</label>
+          <div class="range">
+              <input type="range" class="form-range" id="customRange1" min="50" max="100" step="5"/>
             </div>
-            <h5 class="" style="font-weight: lighter;" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseWidth"
-               aria-expanded="false" aria-controls="collapseWidth"> 
-                Collection    <i class="fa fa-plus float-end" aria-hidden="true"></i>      
-            </h5>
-            <div style="min-height: 120px;">
-              <div class="collapse collapse-vertical" id="collapseWidth" >
-                <div style="width: 300px;">
-                <ul class="navbar-nav m-lg-2">
-                  <li class="nav-item">
-                    <a class="nav-link text-black" href="#">Shop All</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-black" href="#">Computer</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-black" href="#">Tablets</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-black" href="#">Drone & Camera</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-black" href="#">Audio</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-black" href="#">Mobile</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-black" href="#">Sale</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <hr>
-            </div>
-            </div>
+          <li class="nav-item">
+            <a class="nav-link text-black" href="#">- High To Low</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-black" href="#">- Low to High</a>
+          </li>
+        </ul>           
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+
+
+
           </div>
-          <div class="col-md-10">
+          <div class="col-md-9">
               <!-- Để Product dưới đây -->
             <!-- Lấy Product trong DB bỏ vào nha （￣︶￣）↗　 -->
             <!-- Gút luck (*￣3￣)╭ -->
 
-            <div class="container bg-white">
+            <div class="container bg-white" style="max-width: max-content;">
                 <div class="best-sellers m-lg-2">
                 <div class="title pt-lg-5" style="text-align: center;">
                     <h1 style="font-weight: inherit;">Shop All</h1>
@@ -126,40 +191,7 @@
   </div>
 
 
-
-
-
-
-
-
-
-  <script>
-function myAccFunc() {
-  var x = document.getElementById("demoAcc");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-    x.previousElementSibling.className += " w3-green";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-    x.previousElementSibling.className = 
-    x.previousElementSibling.className.replace(" w3-green", "");
-  }
-}
-
-function myDropFunc() {
-  var x = document.getElementById("demoDrop");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-    x.previousElementSibling.className += " w3-green";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-    x.previousElementSibling.className = 
-    x.previousElementSibling.className.replace(" w3-green", "");
-  }
-}
-</script>
-
-
+ 
 <?php 
     include 'includes/footer.php'; 
 ?>
