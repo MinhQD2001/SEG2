@@ -132,51 +132,47 @@
                 <div class="saler-item p-lg-5">
                     <div class="row">
                     <div class="sale col-md-3">
-                        <div class="bg-image hover-overlay hover-zoom">
+                        <div class="bg-image hover-overlay hover-zoom"> <a href="item.php"> <!-- CHỈNH LẠI LINK NHA ( ﾟдﾟ)つ Bye -->
                         <img src="https://f34-zpg.zdn.vn/6970985277037837139/18e23740492c8272db3d.jpg" class="w-100"/>
-                        <a href="#!">
                         </a>
                         </div>
                         <hr>
                         <div class="product-info" style="text-align: center;">
                         <p>Product name</p>
-                        <p>Product Price</p>
+                        <p>Price: <span style="color: #b23cfd;"><strong>85<i class="fas fa-dollar-sign"></i></strong></span></p>
                         </div>
                     </div>
                     <div class="sale col-md-3">
-                        <div class="bg-image hover-overlay hover-zoom">
+                        <div class="bg-image hover-overlay hover-zoom"> <a href="item.php"> <!-- CHỈNH LẠI LINK NHA ( ﾟдﾟ)つ Bye -->
                         <img src="https://f42-zpg.zdn.vn/5462206274377075958/d5084ca932c5f99ba0d4.jpg" class="w-100"/>
-                        <a href="#!">
                         </a>
                         </div>
                         <hr>
                         <div class="product-info" style="text-align: center;">
                         <p>Product name</p>
-                        <p>Product Price</p>
+                        <p>Price: <span style="color: #b23cfd;"><strong>85<i class="fas fa-dollar-sign"></i></strong></span></p>
                         </div>
                     </div>
                     <div class="sale col-md-3">
-                        <div class="bg-image hover-overlay hover-zoom">
+                        <div class="bg-image hover-overlay hover-zoom"> <a href="item.php"> <!-- CHỈNH LẠI LINK NHA ( ﾟдﾟ)つ Bye -->
                         <img src="https://f41-zpg.zdn.vn/6870103725416494750/8f1890b8eed4258a7cc5.jpg" class="w-100"/>
-                        <a href="#!">
                         </a>
                         </div>
                         <hr>
                         <div class="product-info" style="text-align: center;">
                         <p>Product name</p>
-                        <p>Product Price</p>
+                        <p>Price: <span style="color: #b23cfd;"><strong>85<i class="fas fa-dollar-sign"></i></strong></span></p>
                         </div>
                     </div>
                     <div class="sale col-md-3">
-                        <div class="bg-image hover-overlay hover-zoom">
-                        <img src="https://f49-zpg.zdn.vn/3866075692415587431/fede0c787214b94ae005.jpg" class="w-100"/>
-                        <a href="#!">
+                        <div class="bg-image hover-overlay hover-zoom"> <a href="item.php"> <!-- CHỈNH LẠI LINK NHA ( ﾟдﾟ)つ Bye -->
+                        <img src="https://f49-zpg.zdn.vn/3866075692415587431/fede0c787214b94ae005.jpg" class="w-100"/>                        
                         </a>
                         </div>
                         <hr>
                         <div class="product-info" style="text-align: center;">
                         <p>Product name</p>
-                        <p>Product Price</p>
+                        <p>Price: <span style="color: #b23cfd;"><strong>85<i class="fas fa-dollar-sign"></i></strong></span></p>
                         </div>
                     </div>
                     </div>

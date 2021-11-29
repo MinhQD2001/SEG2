@@ -3,16 +3,105 @@
     include 'includes/profilebody.php';
 ?>
 
+<style>
+  button.btn.btn-secondary.btn-lg.btn-rounded.font-weight-lighter {
+    padding-left: 30%;
+    padding-right: 30%;
+}
+</style>
 
-
-<div class="post-item">
+<hr>
+<div class="container text-white">
+  <h1>Product Manage</h1>
+</div> <hr>
+<div class="post-item pb-lg-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                
+            <div class="col-md-9">
+              <div class="my-product text-white">
+                <div class="title">
+                  <h2>My Products</h2> <br>
+                </div>
+                <div class="products">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="bg-image hover-overlay hover-zoom"> <a href="item.php"> <!-- CHỈNH LẠI LINK NHA ( ﾟдﾟ)つ Bye -->
+                        <img src="https://f36-zpg.zdn.vn/6510393195135879787/9345b28526a2edfcb4b3.jpg" class="w-100"/>
+                        </a>
+                      </div>
+                        <hr>
+                        <div class="product-info" style="text-align: center;">
+                          <p>Product name</p>
+                          <p>Price: <span style="color: #b23cfd;"><strong>85<i class="fas fa-dollar-sign"></i></strong></span></p>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="bg-image hover-overlay hover-zoom"> <a href="item.php"> <!-- CHỈNH LẠI LINK NHA ( ﾟдﾟ)つ Bye -->
+                        <img src="https://f36-zpg.zdn.vn/6510393195135879787/9345b28526a2edfcb4b3.jpg" class="w-100"/>
+                        </a>
+                      </div>
+                        <hr>
+                        <div class="product-info" style="text-align: center;">
+                          <p>Product name</p>
+                          <p>Price: <span style="color: #b23cfd;"><strong>85<i class="fas fa-dollar-sign"></i></strong></span></p>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="bg-image hover-overlay hover-zoom"> <a href="item.php"> <!-- CHỈNH LẠI LINK NHA ( ﾟдﾟ)つ Bye -->
+                        <img src="https://f36-zpg.zdn.vn/6510393195135879787/9345b28526a2edfcb4b3.jpg" class="w-100"/>
+                        </a>
+                      </div>
+                        <hr>
+                        <div class="product-info" style="text-align: center;">
+                          <p>Product name</p>
+                          <p>Price: <span style="color: #b23cfd;"><strong>85<i class="fas fa-dollar-sign"></i></strong></span></p>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="bg-image hover-overlay hover-zoom"> <a href="item.php"> <!-- CHỈNH LẠI LINK NHA ( ﾟдﾟ)つ Bye -->
+                        <img src="https://f36-zpg.zdn.vn/6510393195135879787/9345b28526a2edfcb4b3.jpg" class="w-100"/>
+                        </a>
+                      </div>
+                        <hr>
+                        <div class="product-info" style="text-align: center;">
+                          <p>Product name</p>
+                          <p>Price: <span style="color: #b23cfd;"><strong>85<i class="fas fa-dollar-sign"></i></strong></span></p>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="bg-image hover-overlay hover-zoom"> <a href="item.php"> <!-- CHỈNH LẠI LINK NHA ( ﾟдﾟ)つ Bye -->
+                        <img src="https://f36-zpg.zdn.vn/6510393195135879787/9345b28526a2edfcb4b3.jpg" class="w-100"/>
+                        </a>
+                      </div>
+                        <hr>
+                        <div class="product-info" style="text-align: center;">
+                          <p>Product name</p>
+                          <p>Price: <span style="color: #b23cfd;"><strong>85<i class="fas fa-dollar-sign"></i></strong></span></p>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="bg-image hover-overlay hover-zoom"> <a href="item.php"> <!-- CHỈNH LẠI LINK NHA ( ﾟдﾟ)つ Bye -->
+                        <img src="https://f36-zpg.zdn.vn/6510393195135879787/9345b28526a2edfcb4b3.jpg" class="w-100"/>
+                        </a>
+                      </div>
+                        <hr>
+                        <div class="product-info" style="text-align: center;">
+                          <p>Product name</p>
+                          <p>Price: <span style="color: #b23cfd;"><strong>85<i class="fas fa-dollar-sign"></i></strong></span></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-md-6">
-                <!-- Button trigger modal -->
+            <div class="col-md-3" style="margin-bottom: 20px;">
+              <div class="post-product text-white">         <!-- POST PRODUCT  -->
+                <div class="title">
+                 <h2>Post New Product</h2> <br>
+              </div>
+              </div>
+            <div class="post-btn" style="text-align: center;">
+                <!-- Button post -->
                 <button
                 type="button"
                 class="btn btn-secondary btn-lg btn-rounded font-weight-lighter"
@@ -21,6 +110,8 @@
                 >
                 POST ITEM
                 </button>
+            </div>
+
 
                 <!-- Modal -->
                 <div
@@ -42,7 +133,7 @@
                         ></button>
                     </div>
                     <div class="modal-body">
-                        <!-- POST ITEM CHỖ NÀY ~(>_<。)＼ -->
+                        <!-- FORM POST ITEM CHỖ NÀY ~(>_<。)＼ -->
                         <form>
                           <div class="mb-3">
                             <label for="" class="form-label">Product Name</label>
@@ -80,16 +171,116 @@
                             <label class="form-check-label" for="exampleCheck1">I agree with the license</label>
                           </div>
                           <button type="submit" class="btn btn-primary">Submit</button>
+                          <div class="float-end">
+                            <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+                            Close
+                            </button>
+                        </div>
                         </form>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
-                        Close
-                        </button>
-                    </div>
                     </div>
                 </div>
                 </div>
+                <hr>
+                <div class="Filter-by" >
+                  <div>
+                    <h2 class="Filter m-lg-1 text-danger" style="font-weight: lighter;">Filter By</h2>
+                      <hr>
+                    </div>
+                      <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="flush-headingOne">
+                            <button
+                              class="accordion-button"
+                              type="button"
+                              data-mdb-toggle="collapse"
+                              data-mdb-target="#flush-collapseOne"
+                              aria-expanded="true"
+                              aria-controls="flush-collapseOne"
+                            >
+                              Collection
+                            </button>
+                          </h2>
+                          <div
+                            id="flush-collapseOne"
+                            class="accordion-collapse collapse show"
+                            aria-labelledby="flush-headingOne"
+                            data-mdb-parent="#accordionFlushExample"
+                          >
+                            <div class="accordion-body">
+                            <ul class="navbar-nav m-lg-2">
+                              <li class="nav-item">
+                                <a class="nav-link text-black" href="#">- Shop All</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link text-black" href="#">- Computer</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link text-black" href="#">- Tablets</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link text-black" href="#">- Drone & Camera</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link text-black" href="#">- Audio</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link text-black" href="#">- Mobile</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link text-black" href="#">- T.V & Cinema</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link text-black" href="#">- Wearable Tech</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link text-black" href="#">- Sale</a>
+                              </li>
+                            </ul>                  
+                              </div>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingTwo">
+                              <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-mdb-toggle="collapse"
+                                data-mdb-target="#flush-collapseTwo"
+                                aria-expanded="false"
+                                aria-controls="flush-collapseTwo"
+                              >
+                                Prices
+                              </button>
+                            </h2>
+                            <div
+                              id="flush-collapseTwo"
+                              class="accordion-collapse collapse"
+                              aria-labelledby="flush-headingTwo"
+                              data-mdb-parent="#accordionFlushExample"
+                            >
+                              <div class="accordion-body">
+                              <ul class="navbar-nav m-lg-2">
+                              <label class="form-label" for="customRange1">Range 50$ - 100$</label>
+                                <div class="range">
+                                    <input type="range" class="form-range" id="customRange1" min="50" max="100" step="5"/>
+                                  </div>
+                                <li class="nav-item">
+                                  <a class="nav-link text-black" href="#">- High To Low</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link text-black" href="#">- Low to High</a>
+                                </li>
+                              </ul>           
+                              </div>
+                            </div>
+                          </div>
+                          </div>
+                  </div>
+
+
+
+
             </div>
         </div>
     </div>
