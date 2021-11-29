@@ -1,7 +1,9 @@
 <?php 
-    include 'config.php';
-    include 'includes/header.php'
+    include 'includes/header.php';
+    include 'includes/profilebody.php';
 ?>
+
+
 
 <div class="post-item">
     <div class="container">
@@ -13,11 +15,11 @@
                 <!-- Button trigger modal -->
                 <button
                 type="button"
-                class="btn btn-primary"
+                class="btn btn-secondary btn-lg btn-rounded font-weight-lighter"
                 data-mdb-toggle="modal"
                 data-mdb-target="#exampleModal"
                 >
-                Launch demo modal
+                POST ITEM
                 </button>
 
                 <!-- Modal -->
@@ -57,11 +59,11 @@
                           </div>
                           <div class="mb-3">
                             <label for="" class="form-label">Enter Price</label>
-                            <input type="number" class="form-control" id="">
+                            <input type="number" class="form-control" id=""  min="1"  value="1" style="width: 100px;">
                           </div>
                           <div class="mb-3">
                             <label for="" class="form-label">Quantity</label>
-                            <input type="number" class="form-control" id="">
+                            <input type="number" class="form-control" id=""  min="1" name="" value="1" style="width: 100px;">
                           </div>
                           <div class="mb-3">
                             <label for="" class="form-label">Description</label>
