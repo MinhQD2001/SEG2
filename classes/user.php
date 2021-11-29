@@ -130,6 +130,8 @@
                 $this->getUser();
                 $this->loginUser();
             }
+            $location = "Location: index.php?SignUp=success";
+            header($location);
         }
 
         public function loginUser() {
@@ -138,7 +140,7 @@
             $_SESSION['user_id'] = $this->user['id'];
             $_SESSION['user_role'] = $this->user['role'];
             $_SESSION['loggedin'] = true;
-            $location = "Location: index.php?Login=success";
+            $location = "Location: index.php?SignIn=success";
             header($location);
         }
 

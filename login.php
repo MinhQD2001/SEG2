@@ -201,7 +201,7 @@
 
 		<!-- Password input -->
 		<div class="form-outline mb-4">
-			<input name="passaword" type="password" id="registerPassword" class="form-control" />
+			<input name="password" type="password" id="registerPassword" class="form-control" />
 			<label class="form-label" for="registerPassword">Password</label>
 		</div>
 
