@@ -1,6 +1,7 @@
 <?php 
   include 'config.php';
   include 'includes/header.php';
+  include 'includes/profilebody.php';
   include 'classes/category.php';
   include 'classes/product.php';
 
