@@ -88,7 +88,7 @@
                 if ($i == 2 ) {
                     $output .= '
                     <div class="carousel-item " data-mdb-interval="10000">
-                    <div class="row">
+                    <div class="row"> 
                         <div class="col-sm-3">
                             <div class="bg-image hover-overlay hover-zoom">
                                 <img src="' . $item[6] . '" class="w-50"/>
