@@ -2,6 +2,11 @@
 <?php 
     include 'config.php';
     include 'includes/header.php'; 
+    include 'classes/product.php';
+
+    $product = new Product($conn);
+    $product->getList();
+    
 ?>
 
 <style>
@@ -218,79 +223,8 @@
         <h3 style="font-weight: inherit;">Best Sellers</h3>
       </div>
       <div class="saler-item">
-        <div class="row">
-          <div class="col-md-2">
-            <div class="bg-image hover-overlay hover-zoom hover-shadow ripple rounded-5">
-              <img src="https://f51-zpg.zdn.vn/3477869225600484028/2a37f1f9a19a6ac4338b.jpg" class="w-100"/>
-              <a href="#!">
-                <div class="mask" style="background-color: rgba(118, 148, 158, 0.2)"></div>
-              </a>
-            </div>
-            <div class="product-info" style="text-align: center;">
-              <p>Product name</p>
-              <p>Product Price</p>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div class="bg-image hover-overlay hover-zoom hover-shadow ripple rounded-5">
-              <img src="https://f51-zpg.zdn.vn/9034500808923565390/cc5831aaf8c933976ad8.jpg" class="w-100"/>
-              <a href="#!">
-                <div class="mask" style="background-color: rgba(118, 148, 158, 0.2)"></div>
-              </a>
-            </div>
-            <div class="product-info" style="text-align: center;">
-              <p>Product name</p>
-              <p>Product Price</p>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div class="bg-image hover-overlay hover-zoom hover-shadow ripple rounded-5">
-              <img src="https://f42-zpg.zdn.vn/4775575540781477673/84bd09d3ceb005ee5ca1.jpg" class="w-100"/>
-              <a href="#!">
-                <div class="mask" style="background-color: rgba(118, 148, 158, 0.2)"></div>
-              </a>
-            </div>
-            <div class="product-info" style="text-align: center;">
-              <p>Product name</p>
-              <p>Product Price</p>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div class="bg-image hover-overlay hover-zoom hover-shadow ripple rounded-5">
-              <img src="https://f51-zpg.zdn.vn/3823744618258217738/d740f01e327df923a06c.jpg" class="w-100"/>
-              <a href="#!">
-                <div class="mask" style="background-color: rgba(118, 148, 158, 0.2)"></div>
-              </a>
-            </div>
-            <div class="product-info" style="text-align: center;">
-              <p>Product name</p>
-              <p>Product Price</p>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div class="bg-image hover-overlay hover-zoom hover-shadow ripple rounded-5">
-              <img src="https://f17-zpg.zdn.vn/9160298659703074470/a246ba18787bb325ea6a.jpg" class="w-100"/>
-              <a href="#!">
-                <div class="mask" style="background-color: rgba(118, 148, 158, 0.2)"></div>
-              </a>
-            </div>
-            <div class="product-info" style="text-align: center;">
-              <p>Product name</p>
-              <p>Product Price</p>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div class="bg-image hover-overlay hover-zoom hover-shadow ripple rounded-5">
-              <img src="https://f49-zpg.zdn.vn/2305579068472463948/432e4d738f10444e1d01.jpg" class="w-100"/>
-              <a href="#!">
-                <div class="mask" style="background-color: rgba(118, 148, 158, 0.2)"></div>
-              </a>
-            </div>
-            <div class="product-info" style="text-align: center;">
-              <p>Product name</p>
-              <p>Product Price</p>
-            </div>
-          </div>
+        <div class="row">                
+          <?php $product->outputProduct($product->productList); ?>
         </div>
       </div>
       <div class="view-all p-lg-5" style="text-align: center;">
