@@ -71,11 +71,11 @@
                     $output .= '
                     <div class="carousel-item active" data-mdb-interval="10000">
                     <div class="row">
-                        <div class="col-sm-3">
+                        <div class="col-lg-4">
                             <div class="bg-image hover-overlay hover-zoom">
+                            <a href="item.php?id='. $item[0] .'">
                                 <img src="' . $item[6] . '" class="w-50"/>
-                                <a href="item.php?id='. $item[0] .'">
-                                </a>
+                            </a>
                             </div>
                             <div class="product-info" style="text-align: center;">
                                 <p> ' . $item[2] . ' </p>
@@ -89,11 +89,11 @@
                     $output .= '
                     <div class="carousel-item " data-mdb-interval="10000">
                     <div class="row"> 
-                        <div class="col-sm-3">
+                        <div class="col-lg-4">
                             <div class="bg-image hover-overlay hover-zoom">
+                            <a href="item.php?id='. $item[0] .'">
                                 <img src="' . $item[6] . '" class="w-50"/>
-                                <a href="item.php?id='. $item[0] .'">
-                                </a>
+                            </a>
                             </div>
                             <div class="product-info" style="text-align: center;">
                                 <p> ' . $item[2] . ' </p>
@@ -105,11 +105,11 @@
                 }
                 else {
                     $output .= '
-                        <div class="col-sm-3">
+                        <div class="col-lg-4">
                             <div class="bg-image hover-overlay hover-zoom">
+                            <a href="item.php?id='. $item[0] .'">
                                 <img src="' . $item[6] . '" class="w-50"/>
-                                <a href="item.php?id='. $item[0] .'">
-                                </a>
+                            </a>
                             </div>
                             <div class="product-info" style="text-align: center;">
                                 <p> ' . $item[2] . ' </p>
@@ -117,7 +117,7 @@
                             </div>
                         </div>';
                 }               
-                if ($i == 5) {
+                if ($i == 4) {
                     $output .= '</div>
                     </div>';
                     $i = 1;

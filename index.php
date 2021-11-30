@@ -18,6 +18,7 @@
     text-align: center;
     padding: 10%;
 }
+
 </style>
 <div class="Carousel">
 <div
