@@ -64,21 +64,70 @@
 
         public function outputProduct($list) {
             $output = '';
+            $i = 1;
+            $end = false;
             foreach($list as $item) {
-                $output .= '
-                    <div class="col-md-2">
-                        <div class="bg-image hover-overlay hover-zoom hover-shadow ripple rounded-5">
-                        <img src=" ' . $item[6] . '" class="w-100"/>
-                        <a href="item.php?id='. $item[0] .'">
-                            <div class="mask" style="background-color: rgba(118, 148, 158, 0.2)"></div>
-                        </a>
+                if ($i == 1) {
+                    $output .= '
+                    <div class="carousel-item active" data-mdb-interval="10000">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="bg-image hover-overlay hover-zoom">
+                                <img src="' . $item[6] . '"/>
+                                <a href="item.php?id='. $item[0] .'">
+                                </a>
+                            </div>
+                            <div class="product-info" style="text-align: center;">
+                                <p> ' . $item[2] . ' </p>
+                                <p>Price: <span style="color: #b23cfd;"><strong> ' . $item[3] . ' <i class="fas fa-dollar-sign"></i></strong></span></p>
+                            </div>
                         </div>
-                        <div class="product-info" style="text-align: center;">
-                        <p> ' . $item[2] . ' </p>
-                        <p> ' . $item[3] . ' </p>
+                    ';
+                    $i += 2;
+                }
+                if ($i == 2 ) {
+                    $output .= '
+                    <div class="carousel-item " data-mdb-interval="10000">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="bg-image hover-overlay hover-zoom">
+                                <img src="' . $item[6] . '"/>
+                                <a href="item.php?id='. $item[0] .'">
+                                </a>
+                            </div>
+                            <div class="product-info" style="text-align: center;">
+                                <p> ' . $item[2] . ' </p>
+                                <p>Price: <span style="color: #b23cfd;"><strong> ' . $item[3] . ' <i class="fas fa-dollar-sign"></i></strong></span></p>
+                            </div>
                         </div>
-                    </div>
-                ';
+                    ';
+                    $end = false;
+                }
+                else {
+                    $output .= '
+                        <div class="col-md-4">
+                            <div class="bg-image hover-overlay hover-zoom">
+                                <img src="' . $item[6] . '"/>
+                                <a href="item.php?id='. $item[0] .'">
+                                </a>
+                            </div>
+                            <div class="product-info" style="text-align: center;">
+                                <p> ' . $item[2] . ' </p>
+                                <p>Price: <span style="color: #b23cfd;"><strong> ' . $item[3] . ' <i class="fas fa-dollar-sign"></i></strong></span></p>
+                            </div>
+                        </div>';
+                }               
+                if ($i == 4) {
+                    $output .= '</div>
+                    </div>';
+                    $i = 1;
+                    $end = true;
+                }
+                $i += 1;
+            }
+            if ($end == false) {
+                $output .= '</div>
+                    </div>';
             }
             echo $output;
         }
