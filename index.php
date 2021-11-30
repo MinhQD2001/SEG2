@@ -13,6 +13,11 @@
   img.brand {
       padding: 20px;
   }
+
+  .bg-image.hover-overlay.hover-zoom {
+    text-align: center;
+    padding: 10%;
+}
 </style>
 <div class="Carousel">
 <div

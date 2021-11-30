@@ -71,9 +71,9 @@
                     $output .= '
                     <div class="carousel-item active" data-mdb-interval="10000">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-sm-3">
                             <div class="bg-image hover-overlay hover-zoom">
-                                <img src="' . $item[6] . '"/>
+                                <img src="' . $item[6] . '" class="w-50"/>
                                 <a href="item.php?id='. $item[0] .'">
                                 </a>
                             </div>
@@ -89,9 +89,9 @@
                     $output .= '
                     <div class="carousel-item " data-mdb-interval="10000">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-sm-3">
                             <div class="bg-image hover-overlay hover-zoom">
-                                <img src="' . $item[6] . '"/>
+                                <img src="' . $item[6] . '" class="w-50"/>
                                 <a href="item.php?id='. $item[0] .'">
                                 </a>
                             </div>
@@ -105,9 +105,9 @@
                 }
                 else {
                     $output .= '
-                        <div class="col-md-4">
+                        <div class="col-sm-3">
                             <div class="bg-image hover-overlay hover-zoom">
-                                <img src="' . $item[6] . '"/>
+                                <img src="' . $item[6] . '" class="w-50"/>
                                 <a href="item.php?id='. $item[0] .'">
                                 </a>
                             </div>
@@ -117,7 +117,7 @@
                             </div>
                         </div>';
                 }               
-                if ($i == 4) {
+                if ($i == 5) {
                     $output .= '</div>
                     </div>';
                     $i = 1;

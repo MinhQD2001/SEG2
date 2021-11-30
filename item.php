@@ -235,9 +235,8 @@
             <div class="carousel-item active" data-mdb-interval="10000">
                 <div class="row">
                     <div class="col-md-4">
-                    <div class="bg-image hover-overlay hover-zoom">
-                        <img src="https://anphat.com.vn/media/product/39874_61165_laptop_acer_gaming_aspire_7_a715_42g_r6zr_nhqaysv003_den_2021_16.jpg" class="w-100"/>
-                        <a href="#">
+                    <div class="bg-image hover-overlay hover-zoom"> <a href="#">
+                        <img src="https://anphat.com.vn/media/product/39874_61165_laptop_acer_gaming_aspire_7_a715_42g_r6zr_nhqaysv003_den_2021_16.jpg" class="w-100"/>                        
                         </a>
                     </div>
                     <div class="product-info" style="text-align: center;">
@@ -247,8 +246,8 @@
                     </div>
                     <div class="col-md-4">
                     <div class="bg-image hover-overlay hover-zoom">
+                        <a href="#">
                         <img src="https://f32-zpg.zdn.vn/1457401252024849308/f660d163ef44241a7d55.jpg" class="w-100"/>
-                        <a href="#">
                         </a>
                     </div>
                     <div class="product-info" style="text-align: center;">
@@ -258,8 +257,8 @@
                     </div>
                     <div class="col-md-4">
                     <div class="bg-image hover-overlay hover-zoom">
-                        <img src="https://f34-zpg.zdn.vn/6970985277037837139/18e23740492c8272db3d.jpg" class="w-100"/>
                         <a href="#">
+                        <img src="https://f34-zpg.zdn.vn/6970985277037837139/18e23740492c8272db3d.jpg" class="w-100"/>
                         </a>
                     </div>
                     <div class="product-info" style="text-align: center;">
@@ -273,8 +272,8 @@
                 <div class="row">
                     <div class="col-md-4">
                     <div class="bg-image hover-overlay hover-zoom">
+                        <a href="#">
                         <img src="https://anphat.com.vn/media/product/39341_dell_x2cnd_precision_3561_g11_i7_11800h_1652898.jpg" class="w-100"/>
-                        <a href="#">
                         </a>
                     </div>
                     <div class="product-info" style="text-align: center;">
@@ -284,8 +283,8 @@
                     </div>
                     <div class="col-md-4">
                     <div class="bg-image hover-overlay hover-zoom">
+                        <a href="#">
                         <img src="https://f32-zpg.zdn.vn/1457401252024849308/f660d163ef44241a7d55.jpg" class="w-100"/>
-                        <a href="#">
                         </a>
                     </div>
                     <div class="product-info" style="text-align: center;">
@@ -295,8 +294,8 @@
                     </div>
                     <div class="col-md-4">
                     <div class="bg-image hover-overlay hover-zoom">
-                        <img src="https://f34-zpg.zdn.vn/6970985277037837139/18e23740492c8272db3d.jpg" class="w-100"/>
                         <a href="#">
+                        <img src="https://f34-zpg.zdn.vn/6970985277037837139/18e23740492c8272db3d.jpg" class="w-100"/>
                         </a>
                     </div>
                     <div class="product-info" style="text-align: center;">
@@ -310,8 +309,8 @@
                 <div class="row">
                     <div class="col-md-4">
                     <div class="bg-image hover-overlay hover-zoom">
+                        <a href="#">
                         <img src="https://f20-zpg.zdn.vn/7677535584136899247/a5158116bf31746f2d20.jpg" class="w-100"/>
-                        <a href="#">
                         </a>
                     </div>
                     <div class="product-info" style="text-align: center;">
@@ -321,8 +320,8 @@
                     </div>
                     <div class="col-md-4">
                     <div class="bg-image hover-overlay hover-zoom">
+                        <a href="#">
                         <img src="https://anphat.com.vn/media/product/38779_37081_36960_637502180353670464_asus_vivobook_x515_print_bac_1.jpg" class="w-100"/>
-                        <a href="#">
                         </a>
                     </div>
                     <div class="product-info" style="text-align: center;">
@@ -332,8 +331,8 @@
                     </div>
                     <div class="col-md-4">
                     <div class="bg-image hover-overlay hover-zoom">
-                        <img src="https://f34-zpg.zdn.vn/6970985277037837139/18e23740492c8272db3d.jpg" class="w-100"/>
                         <a href="#">
+                        <img src="https://f34-zpg.zdn.vn/6970985277037837139/18e23740492c8272db3d.jpg" class="w-100"/>
                         </a>
                     </div>
                     <div class="product-info" style="text-align: center;">
