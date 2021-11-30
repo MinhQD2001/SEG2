@@ -1,6 +1,11 @@
 <?php 
     include 'config.php';
     include 'includes/header.php'; 
+    include 'classes/product.php';
+
+    if (isset($_GET['id'])) {
+        
+    }
 ?>
 
 <style>
