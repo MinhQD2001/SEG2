@@ -1,6 +1,10 @@
 <?php 
-    include 'congfig.php';
+    include 'config.php';
     include 'includes/header.php';
+    include 'classes/cartItem.php';
+
+    $cartList = new CartItem($conn);
+    
 ?>
 
 <style>

@@ -8,6 +8,10 @@
         $product->getProductById($_GET['id']);
         
     }
+    
+    if (isset($_POST['addToCart'])) {
+
+    }
 ?>
 
 <style>
@@ -127,26 +131,27 @@
        </div>
      </div>  
      <div class="col-sm-6">
-         <div class="item-info">
-             <h2 class="text-black"><?php echo $product->product[0][1]; ?></h2>
-             <p>Author: <span class="author-name" style="color: #b23cfd;"><strong> <?php echo $product->product[0][5]; ?> </strong></span></p>
-             <!-- Nếu item mình add vô db thì xuất ra Author: TechStore 👈(ﾟヮﾟ👈) -->
-             <p>Price: <span style="color: #b23cfd;"><strong><?php echo $product->product[0][2]; ?><i class="fas fa-dollar-sign"></i></strong></span></p>
-             <!-- Put Price here ＼(ﾟｰﾟ＼) -->
-             <p>Quantity</p>
-            <input type="number" min="1" name="" value="1" class="btn btn-outline-dark btn-lg btn-rounded font-weight-lighter mb-lg-3" style="width: 100px;">
-         </div>
-        <div class="button-option mb-lg-5">
-            <div class="add-to-cart mb-lg-3">
-                <button type="button" class="btn btn-secondary btn-lg btn-rounded font-weight-lighter" style="padding-left: 17%;
-                padding-right: 17%; margin-right: 5px">Add to Cart</button>
-                <button type="button" class="btn btn-outline-secondary btn-lg btn-rounded"><i class="fas fa-heart"></i></button>  
+            <div class="item-info">
+                <h2 class="text-black"><?php echo $product->product[0][1]; ?></h2>
+                <p>Author: <span class="author-name" style="color: #b23cfd;"><strong> <?php echo $product->product[0][5]; ?> </strong></span></p>
+                <!-- Nếu item mình add vô db thì xuất ra Author: TechStore 👈(ﾟヮﾟ👈) -->
+                <p>Price: <span style="color: #b23cfd;"><strong><?php echo $product->product[0][2]; ?><i class="fas fa-dollar-sign"></i></strong></span></p>
+                <!-- Put Price here ＼(ﾟｰﾟ＼) -->
+                <p>Quantity</p>
+                <input id="quantity" type="number" min="1" name="" value="1" class="btn btn-outline-dark btn-lg btn-rounded font-weight-lighter mb-lg-3" style="width: 100px;">
             </div>
-            <div class="buy-now">
-                <button type="button" class="btn btn-dark btn-lg btn-rounded font-weight-lighter" style="padding-left: 25%;
-                padding-right: 25%;">Buy Now</button>
-            </div>
-                   
+            <div class="button-option mb-lg-5">
+                <div class="add-to-cart mb-lg-3">
+                    <input id="productID" value="<?php echo $product->product[0][0]; ?>" hidden></input>
+                    <input id="userID" value="<?php echo $_SESSION['user_id']; ?>" hidden></input>
+                    <button name="addToCart" type="submit" class="btn btn-secondary btn-lg btn-rounded font-weight-lighter" style="padding-left: 17%;
+                    padding-right: 17%; margin-right: 5px" onclick="addToCart()">Add to Cart</button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg btn-rounded"><i class="fas fa-heart"></i></button>  
+                </div>
+                <div class="buy-now">
+                    <button type="button" class="btn btn-dark btn-lg btn-rounded font-weight-lighter" style="padding-left: 25%;
+                    padding-right: 25%;">Buy Now</button>
+                </div>       
         </div>
         <div class="item-accordion">
         <div class="accordion" id="accordion">
@@ -249,7 +254,7 @@
                     <div class="col-md-4">
                     <div class="bg-image hover-overlay hover-zoom">
                         <a href="#">
-                        <img src="https://f32-zpg.zdn.vn/1457401252024849308/f660d163ef44241a7d55.jpg" class="w-100"/>
+                            <img src="https://f32-zpg.zdn.vn/1457401252024849308/f660d163ef44241a7d55.jpg" class="w-100"/>
                         </a>
                     </div>
                     <div class="product-info" style="text-align: center;">

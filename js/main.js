@@ -1,3 +1,22 @@
+console.log("hello");
+
+
+
+function addToCart() {
+    var quantity = document.getElementById('quantity').value;
+    var productID = document.getElementById('productID').value;
+    var userID = document.getElementById('userID').value;
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "includes/addCart.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onload = function() {
+        if (this.status == 200) {            
+            alert(this.responseText);
+        }
+    }
+    xhr.send("productID="+productID+"&quantity="+quantity+"&userID="+userID);
+}
+
 jQuery(document).ready(function($){
     
     // jQuery sticky Menu
@@ -93,3 +112,5 @@ jQuery(document).ready(function($){
 
   ga('create', 'UA-10146041-21', 'auto');
   ga('send', 'pageview');
+
+

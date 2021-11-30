@@ -147,5 +147,7 @@
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Custom scripts -->
     <script type="text/javascript"></script>
+    
+    <script src="js/main.js"></script>
   </body>
 </html>
