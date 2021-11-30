@@ -4,6 +4,8 @@
     include 'classes/product.php';
 
     if (isset($_GET['id'])) {
+        $product = new Product($conn);
+        $product->getProductById($_GET['id']);
         
     }
 ?>
@@ -111,7 +113,7 @@
      <div class="col-sm-6">
         <div class="item-image" style="text-align: center;">
 
-            <img id="myImg" src="https://f36-zpg.zdn.vn/6510393195135879787/9345b28526a2edfcb4b3.jpg" alt="HKI Tech Quadcopter Drone With 360 Camera & Controller" width="500" height="500">
+            <img id="myImg" src=" <?php echo $product->product[0][4]; ?>" alt="HKI Tech Quadcopter Drone With 360 Camera & Controller" width="500" height="500">
 
             <!-- The Modal -->
             <div id="myModal" class="modal">
@@ -121,15 +123,15 @@
             </div>
         </div>
        <div class="description">
-           <p>I'm a product description. This is a great place to "sell" your product and grab buyers' attention. Describe your product clearly and concisely. Use unique keywords. Write your own description instead of using manufacturers' copy.</p>
+           <p> <?php echo $product->product[0][3]; ?> </p>
        </div>
      </div>  
      <div class="col-sm-6">
          <div class="item-info">
-             <h2 class="text-black">HKI Tech Quadcopter Drone With 360 Camera & Controller</h2>
-             <p>Author: <span class="author-name" style="color: #b23cfd;"><strong> admin</strong></span></p>
+             <h2 class="text-black"><?php echo $product->product[0][1]; ?></h2>
+             <p>Author: <span class="author-name" style="color: #b23cfd;"><strong> <?php echo $product->product[0][5]; ?> </strong></span></p>
              <!-- Nếu item mình add vô db thì xuất ra Author: TechStore 👈(ﾟヮﾟ👈) -->
-             <p>Price: <span style="color: #b23cfd;"><strong>85<i class="fas fa-dollar-sign"></i></strong></span></p>
+             <p>Price: <span style="color: #b23cfd;"><strong><?php echo $product->product[0][2]; ?><i class="fas fa-dollar-sign"></i></strong></span></p>
              <!-- Put Price here ＼(ﾟｰﾟ＼) -->
              <p>Quantity</p>
             <input type="number" min="1" name="" value="1" class="btn btn-outline-dark btn-lg btn-rounded font-weight-lighter mb-lg-3" style="width: 100px;">

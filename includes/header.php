@@ -115,7 +115,7 @@
 
           <div class="d-flex align-items-center">
             <!-- Icon -->
-            <a class="text-reset me-3" href="#">
+            <a class="text-reset me-3" href="cart.php">
               <i class="fas fa-shopping-cart"></i>
             </a>
 

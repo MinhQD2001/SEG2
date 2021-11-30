@@ -131,6 +131,15 @@
             }
             echo $output;
         }
+
+        public function getProductById($id) {
+            $sql = 'SELECT p.id, p.name, p.price, p.description, p.post_img, u.name FROM product p JOIN user u ON u.id = p.id_provider WHERE p.id = ?';
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param('i', $id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $this->product = $result->fetch_all();
+        }
     }
 
 ?>

@@ -1,4 +1,5 @@
 <?php 
+    include 'congfig.php';
     include 'includes/header.php';
 ?>
 
