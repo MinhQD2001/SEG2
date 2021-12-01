@@ -2,6 +2,9 @@ console.log("hello");
 
 
 
+
+
+
 function addToCart() {
     var quantity = document.getElementById('quantity').value;
     var productID = document.getElementById('productID').value;
@@ -12,10 +15,60 @@ function addToCart() {
     xhr.onload = function() {
         if (this.status == 200) {            
             alert(this.responseText);
+            
         }
     }
     xhr.send("productID="+productID+"&quantity="+quantity+"&userID="+userID);
 }
+
+function changeQuantity(cartID, userID) {
+    var quantity = document.getElementById('quantity'+cartID).value;
+    var sum = document.getElementById('summary'+cartID);
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "includes/changeCart.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onload = function() {
+        if (this.status == 200) {                        
+            let value = 'SUM: $' + this.responseText;            
+            sum.innerHTML = value;
+            updateTotalPrice(userID);
+        }
+    }
+    xhr.send("cartID="+cartID+"&quantity="+quantity+"&type=change");
+}
+
+function removeCartItem(cartID, userID ) {
+    var cartList = document.getElementById('cartList');
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "includes/changeCart.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onload = function() {
+        if (this.status == 200) {                        
+            cartList.innerHTML = this.responseText;
+            updateTotalPrice(userID);
+        }
+    }
+    xhr.send("cartID="+cartID+"&userID="+userID+"&type=delete");
+}
+
+function updateTotalPrice(userID) {
+    var total1 = document.getElementById('total1');
+    var total2 = document.getElementById('total2');
+    
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "includes/changeCart.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onload = function() {
+        if (this.status == 200) {    
+            
+            total1.innerHTML = '$' + this.responseText;
+            total2.innerHTML = '$' + this.responseText;
+        }
+    }
+    xhr.send("userID="+userID+"&type=updateTotalPrice");
+
+}
+
 
 jQuery(document).ready(function($){
     

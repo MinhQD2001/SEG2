@@ -140,6 +140,7 @@
             $result = $stmt->get_result();
             $this->product = $result->fetch_all();
         }
+        
     }
 
 ?>
