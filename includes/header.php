@@ -108,7 +108,7 @@
                 <?php endif; ?>                
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-heart"></i> Favorites </a>
+                <a class="nav-link" href="favourite.php"><i class="fas fa-heart"></i> Favorites </a>
               </li>
             </ul>
             <!-- Left links -->

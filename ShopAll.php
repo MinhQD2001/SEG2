@@ -11,11 +11,13 @@
       $category->getList();
       $category->id = $_GET['categoryID'];
       $category->getProductsByFilter();
-    }
-    else {
+      $category->getCategoryByID($category->id);
+  
+    } else {
       $category = new Category($conn);
       $category->getList();
       $category->getAllProducts();
+      $category->name = 'Shop All';
     }
 ?>
 
@@ -120,7 +122,7 @@
             <div class="container bg-white" style="max-width: max-content;">
                 <div class="best-sellers m-lg-2" id="category">
                 <div class="title pt-lg-5" style="text-align: center;">
-                    <h1 style="font-weight: inherit;">Shop All</h1>
+                    <h1 style="font-weight: inherit;"> <?php $category->name ?> </h1>
                 </div>
                 <?php $category->outputProductList(); ?>
                 <!-- HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE  -->              

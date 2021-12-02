@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2021 at 06:20 AM
+-- Generation Time: Dec 02, 2021 at 09:28 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -38,6 +38,14 @@ CREATE TABLE `bill` (
   `date_created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `bill`
+--
+
+INSERT INTO `bill` (`id`, `firstName`, `lastName`, `phone`, `email`, `address`, `information`, `date_created`) VALUES
+(6, 'dsaf', 'asdf', 'asdf', 'nhat25@gmail.com', 'fasd', 'asdf', '2021-12-02 12:36:58'),
+(7, 'dasf', 'asdf', 'adfd', 'quangdo2000@gmail.com', 'asdf', 'asdfads', '2021-12-02 14:07:23');
+
 -- --------------------------------------------------------
 
 --
@@ -65,6 +73,18 @@ CREATE TABLE `cart` (
   `status` int(11) DEFAULT 0,
   `billID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `userID`, `productID`, `quantity`, `date_created`, `status`, `billID`) VALUES
+(32, 7, 1, 5, '2021-12-02 12:36:46', 2, 6),
+(33, 7, 4, 3, '2021-12-02 13:37:04', 2, 7),
+(34, 7, 1, 2, '2021-12-02 14:07:00', 2, 7),
+(35, 7, 2, 1, '2021-12-02 14:07:08', 2, 7),
+(36, 7, 1, 1, '2021-12-02 14:08:58', 0, NULL),
+(37, 7, 4, 1, '2021-12-02 15:09:38', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -186,6 +206,29 @@ INSERT INTO `user` (`id`, `name`, `email`, `password`, `phone`, `addr`, `dob`, `
 (6, 'nhat', 'nhat25@gmail.com', '$2y$10$Mse1N72KzcG0I5qJ1YWzm.n8L86cK4JSIweKcHqhcsYcyUi7zKUdO', '', '', '0000-00-00', 3, '2021-11-27 14:28:16', NULL),
 (7, 'Quang', 'quangdo2000@gmail.com', '$2y$10$tHZf/Qyl6ZnW/GpfVtfySOLiIHVePxzlZuP3yckMTwufDTydzIP7G', '', '', '0000-00-00', 3, '2021-11-29 14:09:33', NULL);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wish_list`
+--
+
+CREATE TABLE `wish_list` (
+  `id` int(11) NOT NULL,
+  `userID` int(11) NOT NULL,
+  `productID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `wish_list`
+--
+
+INSERT INTO `wish_list` (`id`, `userID`, `productID`) VALUES
+(15, 7, 1),
+(17, 7, 2),
+(18, 7, 17),
+(21, 7, 4),
+(22, 7, 7);
+
 --
 -- Indexes for dumped tables
 --
@@ -227,6 +270,12 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `wish_list`
+--
+ALTER TABLE `wish_list`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -234,7 +283,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `bill_item`
@@ -246,7 +295,7 @@ ALTER TABLE `bill_item`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -265,6 +314,12 @@ ALTER TABLE `product`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `wish_list`
+--
+ALTER TABLE `wish_list`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -310,7 +310,7 @@
         <div class="col-3" style="width: 20%;">
           <div class="bg-image hover-overlay hover-zoom hover-shadow ripple rounded-circle">
             <img src="https://f51-zpg.zdn.vn/9034500808923565390/cc5831aaf8c933976ad8.jpg" class="w-100"/>
-            <a href="#!">
+            <a href="ShopAll.php?categoryID=1">
               <div class="mask" style="background-color: rgba(118, 148, 158, 0.2)"></div>
             </a>
           </div>
@@ -321,18 +321,18 @@
         <div class="col-3" style="width: 20%;">
           <div class="bg-image hover-overlay hover-zoom hover-shadow ripple rounded-circle">
             <img src="https://f51-zpg.zdn.vn/3823744618258217738/d740f01e327df923a06c.jpg" class="w-100"/>
-            <a href="#!">
+            <a href="ShopAll.php?categoryID=5">
               <div class="mask" style="background-color: rgba(118, 148, 158, 0.2)"></div>
             </a>
           </div>
           <div class="category-name">
-            <a href=""><h5>Mobile</h5></a>
+            <a href="ShopAll.php?categoryID=5"><h5>Mobile</h5></a>
           </div>
         </div>
         <div class="col-3" style="width: 20%;">
           <div class="bg-image hover-overlay hover-zoom hover-shadow ripple rounded-circle">
             <img src="https://f42-zpg.zdn.vn/4775575540781477673/84bd09d3ceb005ee5ca1.jpg" class="w-100"/>
-            <a href="#!">
+            <a href="ShopAll.php?categoryID=3">
               <div class="mask" style="background-color: rgba(118, 148, 158, 0.2)"></div>
             </a>
           </div>
@@ -343,7 +343,7 @@
         <div class="col-3" style="width: 20%;">
           <div class="bg-image hover-overlay hover-zoom hover-shadow ripple rounded-circle">
             <img src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX41397013.jpg" class="w-100"/>
-            <a href="#!">
+            <a href="ShopAll.php?categoryID=8">
               <div class="mask" style="background-color: rgba(118, 148, 158, 0.2)"></div>
             </a>
           </div>
@@ -354,7 +354,7 @@
         <div class="col-3" style="width: 20%;">
           <div class="bg-image hover-overlay hover-zoom hover-shadow ripple rounded-circle">
             <img src="https://f41-zpg.zdn.vn/578486546222822239/1375a90b6c69a737fe78.jpg" class="w-100"/>
-            <a href="#!">
+            <a href="ShopAll.php?categoryID=2">
               <div class="mask" style="background-color: rgba(118, 148, 158, 0.2)"></div>
             </a>
           </div>
@@ -365,7 +365,7 @@
         <div class="col-3" style="width: 20%;">
           <div class="bg-image hover-overlay hover-zoom hover-shadow ripple rounded-circle">
             <img src="https://image.shutterstock.com/image-vector/ribbon-award-best-seller-gold-600w-1027703062.jpg" class="w-100"/>
-            <a href="#!">
+            <a href="ShopAll.php?categoryID=8">
               <div class="mask" style="background-color: rgba(118, 148, 158, 0.2)"></div>
             </a>
           </div>
@@ -376,7 +376,7 @@
         <div class="col-3" style="width: 20%;">
           <div class="bg-image hover-overlay hover-zoom hover-shadow ripple rounded-circle">
             <img src="https://f41-zpg.zdn.vn/8898347919529828730/da572e6fd60d1d53441c.jpg" class="w-100"/>
-            <a href="#!">
+            <a href="ShopAll.php?categoryID=6">
               <div class="mask" style="background-color: rgba(118, 148, 158, 0.2)"></div>
             </a>
           </div>
@@ -387,7 +387,7 @@
         <div class="col-3" style="width: 20%;">
           <div class="bg-image hover-overlay hover-zoom hover-shadow ripple rounded-circle">
             <img src="https://f18-zpg.zdn.vn/3602282687136771306/2c120ccff8ad33f36abc.jpg" class="w-100"/>
-            <a href="#!">
+            <a href="7">
               <div class="mask" style="background-color: rgba(118, 148, 158, 0.2)"></div>
             </a>
           </div>
@@ -398,7 +398,7 @@
         <div class="col-3" style="width: 20%;">
           <div class="bg-image hover-overlay hover-zoom hover-shadow ripple rounded-circle">
             <img src="https://f53-zpg.zdn.vn/22429382608754329/e2676e189f7a54240d6b.jpg" class="w-100"/>
-            <a href="#!">
+            <a href="4">
               <div class="mask" style="background-color: rgba(118, 148, 158, 0.2)"></div>
             </a>
           </div>
@@ -409,7 +409,7 @@
         <div class="col-3" style="width: 20%;">
           <div class="bg-image hover-overlay hover-zoom hover-shadow ripple rounded-circle">
             <img src="https://f34-zpg.zdn.vn/8600259200895499528/e2f0428fb3ed78b321fc.jpg" class="w-100"/>
-            <a href="#!">
+            <a href="ShopAll.php?categoryID=4">
               <div class="mask" style="background-color: rgba(118, 148, 158, 0.2)"></div>
             </a>
           </div>

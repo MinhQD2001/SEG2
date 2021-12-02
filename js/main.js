@@ -98,6 +98,18 @@ function getAllProducts() {
     xhr.send();
 }
 
+function addToWishList(userID, productID) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "includes/addWishList.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onload = function() {
+        if (this.status == 200) {    
+            alert(this.responseText);
+        }
+    }
+    xhr.send('userID=' + userID + '&productID=' + productID);
+}
+
 
 jQuery(document).ready(function($){
     

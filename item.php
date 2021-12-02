@@ -6,12 +6,12 @@
     if (isset($_GET['id'])) {
         $product = new Product($conn);
         $product->getProductById($_GET['id']);
+        // echo '<pre>' , $product->product[0][0] , '</pre>';
+        $product->id = $product->product[0][0];
+        $product->getProductRelated();;
         
     }
     
-    if (isset($_POST['addToCart'])) {
-
-    }
 ?>
 
 <style>
@@ -146,7 +146,7 @@
                     <input id="userID" value="<?php echo $_SESSION['user_id']; ?>" hidden></input>
                     <button name="addToCart" type="submit" class="btn btn-secondary btn-lg btn-rounded font-weight-lighter" style="padding-left: 17%;
                     padding-right: 17%; margin-right: 5px" onclick="addToCart()">Add to Cart</button>
-                    <button type="button" class="btn btn-outline-secondary btn-lg btn-rounded"><i class="fas fa-heart"></i></button>  
+                    <button type="button" class="btn btn-outline-secondary btn-lg btn-rounded" onclick="addToWishList(<?php echo $_SESSION['user_id']; ?>,<?php echo $product->product[0][0]; ?> )"><i class="fas fa-heart"></i></button>  
                 </div>
                 <div class="buy-now">
                     <button type="button" class="btn btn-dark btn-lg btn-rounded font-weight-lighter" style="padding-left: 25%;
@@ -239,116 +239,7 @@
     <h2 class="text-black pb-4" style="text-align: center;">Related Items</h2>
         <div id="carouselInterval" class="carousel slide carousel-dark" data-mdb-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active" data-mdb-interval="10000">
-                <div class="row">
-                    <div class="col-md-4">
-                    <div class="bg-image hover-overlay hover-zoom"> <a href="#">
-                        <img src="https://anphat.com.vn/media/product/39874_61165_laptop_acer_gaming_aspire_7_a715_42g_r6zr_nhqaysv003_den_2021_16.jpg" class="w-100"/>                        
-                        </a>
-                    </div>
-                    <div class="product-info" style="text-align: center;">
-                    <p>Product name</p>
-                    <p>Price: <span style="color: #b23cfd;"><strong>85<i class="fas fa-dollar-sign"></i></strong></span></p>
-                    </div>
-                    </div>
-                    <div class="col-md-4">
-                    <div class="bg-image hover-overlay hover-zoom">
-                        <a href="#">
-                            <img src="https://f32-zpg.zdn.vn/1457401252024849308/f660d163ef44241a7d55.jpg" class="w-100"/>
-                        </a>
-                    </div>
-                    <div class="product-info" style="text-align: center;">
-                    <p>Product name</p>
-                    <p>Price: <span style="color: #b23cfd;"><strong>85<i class="fas fa-dollar-sign"></i></strong></span></p>
-                    </div>
-                    </div>
-                    <div class="col-md-4">
-                    <div class="bg-image hover-overlay hover-zoom">
-                        <a href="#">
-                        <img src="https://f34-zpg.zdn.vn/6970985277037837139/18e23740492c8272db3d.jpg" class="w-100"/>
-                        </a>
-                    </div>
-                    <div class="product-info" style="text-align: center;">
-                    <p>Product name</p>
-                    <p>Price: <span style="color: #b23cfd;"><strong>85<i class="fas fa-dollar-sign"></i></strong></span></p>
-                    </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item" data-mdb-interval="10000">
-                <div class="row">
-                    <div class="col-md-4">
-                    <div class="bg-image hover-overlay hover-zoom">
-                        <a href="#">
-                        <img src="https://anphat.com.vn/media/product/39341_dell_x2cnd_precision_3561_g11_i7_11800h_1652898.jpg" class="w-100"/>
-                        </a>
-                    </div>
-                    <div class="product-info" style="text-align: center;">
-                    <p>Product name</p>
-                    <p>Price: <span style="color: #b23cfd;"><strong>85<i class="fas fa-dollar-sign"></i></strong></span></p>
-                    </div>
-                    </div>
-                    <div class="col-md-4">
-                    <div class="bg-image hover-overlay hover-zoom">
-                        <a href="#">
-                        <img src="https://f32-zpg.zdn.vn/1457401252024849308/f660d163ef44241a7d55.jpg" class="w-100"/>
-                        </a>
-                    </div>
-                    <div class="product-info" style="text-align: center;">
-                    <p>Product name</p>
-                    <p>Price: <span style="color: #b23cfd;"><strong>85<i class="fas fa-dollar-sign"></i></strong></span></p>
-                    </div>
-                    </div>
-                    <div class="col-md-4">
-                    <div class="bg-image hover-overlay hover-zoom">
-                        <a href="#">
-                        <img src="https://f34-zpg.zdn.vn/6970985277037837139/18e23740492c8272db3d.jpg" class="w-100"/>
-                        </a>
-                    </div>
-                    <div class="product-info" style="text-align: center;">
-                    <p>Product name</p>
-                    <p>Price: <span style="color: #b23cfd;"><strong>85<i class="fas fa-dollar-sign"></i></strong></span></p>
-                    </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item" data-mdb-interval="10000">
-                <div class="row">
-                    <div class="col-md-4">
-                    <div class="bg-image hover-overlay hover-zoom">
-                        <a href="#">
-                        <img src="https://f20-zpg.zdn.vn/7677535584136899247/a5158116bf31746f2d20.jpg" class="w-100"/>
-                        </a>
-                    </div>
-                    <div class="product-info" style="text-align: center;">
-                    <p>Product name</p>
-                    <p>Price: <span style="color: #b23cfd;"><strong>85<i class="fas fa-dollar-sign"></i></strong></span></p>
-                    </div>
-                    </div>
-                    <div class="col-md-4">
-                    <div class="bg-image hover-overlay hover-zoom">
-                        <a href="#">
-                        <img src="https://anphat.com.vn/media/product/38779_37081_36960_637502180353670464_asus_vivobook_x515_print_bac_1.jpg" class="w-100"/>
-                        </a>
-                    </div>
-                    <div class="product-info" style="text-align: center;">
-                    <p>Product name</p>
-                    <p>Price: <span style="color: #b23cfd;"><strong>85<i class="fas fa-dollar-sign"></i></strong></span></p>
-                    </div>
-                    </div>
-                    <div class="col-md-4">
-                    <div class="bg-image hover-overlay hover-zoom">
-                        <a href="#">
-                        <img src="https://f34-zpg.zdn.vn/6970985277037837139/18e23740492c8272db3d.jpg" class="w-100"/>
-                        </a>
-                    </div>
-                    <div class="product-info" style="text-align: center;">
-                    <p>Product name</p>
-                    <p>Price: <span style="color: #b23cfd;"><strong>85<i class="fas fa-dollar-sign"></i></strong></span></p>
-                    </div>
-                    </div>
-                </div>
-            </div>
+            <?php $product->outputProductRelated(); ?>
         </div>
         <button
             class="carousel-control-prev"
