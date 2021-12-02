@@ -43,6 +43,7 @@
             echo 'Adding to Your Cart is successful!';
         }
 
+        // GET PRODUCTS STAYED IN CART WHEN USERS CLICK TO THEIR CART
         public function getProductListByUserID($id) {
             $sql = 'select U.name as AUTHOR, P.description as DESCRIPTION, P.post_img as IMAGE, P.name as NAME, C.quantity as QUANTITY, P.price as PRODUCT_PRICE, C.quantity*P.price as SUMARY, C.id, c.userID FROM CART C JOIN PRODUCT P ON  C.productID  = P.id join user U on P.id_provider  = U.id where C.userID = ? AND C.status = 0';
             $stmt = $this->conn->prepare($sql);
@@ -52,6 +53,7 @@
             $this->cartList = $results->fetch_all();
         }
 
+        // PRINT SPECIFIC PRODUCT IN CART
         public function outputCartItem() {
             foreach($this->cartList as $item) {
                 $this->output .= '
@@ -94,6 +96,7 @@
             }
         }
 
+        // CHANGE QUANTITY OF ANY PRODUCT WHEN USERS CLICK BUTTON TO CHANGE QUANTITY
         public function changeCart() {
             $sql = 'UPDATE cart SET quantity = ? WHERE id = ?';
             $stmt = $this->conn->prepare($sql);
@@ -110,6 +113,7 @@
 
         }
 
+        // PRINT ALL INFORMATION OF CART INCLUDED PRODUCT IN CART
         public function outputCart() {
             $this->outputCartItem();
             $count = count($this->cartList);
@@ -129,6 +133,7 @@
             echo $output;
         }
 
+        // REMOVE PRODUCT IN CART
         public function deleteCartItem($userID){
             $sql = "DELETE FROM Cart WHERE id = ?";
             $stmt = $this->conn->prepare($sql);
@@ -139,6 +144,7 @@
             $this->outputCart();
         }
 
+        // GET TOTAL PRICE FOR ALL PRODUCT IN CART
         public function getTotalPrice() {
             $sql = "select sum(c.quantity*p.price) as total from cart c join product p on c.productID = p.id where userID = ? and c.status = 0";
             $stmt = $this->conn->prepare($sql);
@@ -147,6 +153,7 @@
             $this->total = $stmt->get_result()->fetch_all()[0][0];
         }
 
+        // WHEN THEY PRESS CHECKOUT, THESE PRODUCT IN USING CART WILL BE CHECKED 'STATUS' = 2 TO SAVE IN HISTORY AND SAVE BILL ID
         public function checkoutCart ($billID) {
             $sql = "UPDATE Cart SET status = 2, billID = ? WHERE id = ?";
             $stmt = $this->conn->prepare($sql);
@@ -155,6 +162,8 @@
                 $stmt->execute();
             }
         }
+
+        
 
 
     }

@@ -141,6 +141,14 @@
             $this->product = $result->fetch_all();
         }
         
+        public function getProductByCategory($categoryID) {
+            $sql = 'SELECT p.id, p.id_provider, p.name, p.price, p.description, p.date_created, p.post_img, p.quantity, p.hide FROM product p JOIN product_category pc ON p.id = pc.id_product  JOIN category c ON pc.id_category = c.id WHERE p.hide = 0 AND c.id = ?';
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param('i', $categoryID);
+            $stmt->execute();
+            $this->productList = $stmt->get_result()->fetch_all();
+        }
+
     }
 
 ?>

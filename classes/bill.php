@@ -15,6 +15,7 @@
             $this->conn = $conn;
         }
 
+        // WHEN USER CLICK CHECKOUT AND FINISH PAYMENT, CREATE A BILL TO SAVE ALL PRODUCTS THEY CHECKOUTED
         public function createBill() {
             $sql = "INSERT INTO bill (firstName, lastName, phone, email, address, information) VALUES (?,?,?,?,?,?)";
             $stmt = $this->conn->prepare($sql);

@@ -69,6 +69,34 @@ function updateTotalPrice(userID) {
 
 }
 
+function filterByCategory(categoryID) {
+    var view = document.getElementById('category');
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "includes/filterCategory.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onload = function() {
+        if (this.status == 200) {    
+            view.innerHTML = this.responseText;
+        }
+    }
+    xhr.send("categoryID="+categoryID);
+}
+
+function getAllProducts() {
+    var view = document.getElementById('category');
+    console.log('hey');
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "includes/filterCategory.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onload = function() {
+        if (this.status == 200) {    
+            view.innerHTML = this.responseText;
+        }
+    }
+    xhr.send();
+}
+
 
 jQuery(document).ready(function($){
     
