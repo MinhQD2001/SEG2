@@ -7,9 +7,9 @@
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
+-- SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+-- START TRANSACTION;
+-- SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -36,7 +36,7 @@ CREATE TABLE `bill` (
   `address` varchar(300) NOT NULL,
   `information` varchar(300) NOT NULL,
   `date_created` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ;
 
 --
 -- Dumping data for table `bill`
@@ -56,7 +56,7 @@ CREATE TABLE `bill_item` (
   `id` int(11) NOT NULL,
   `billID` int(11) NOT NULL,
   `cartID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ;
 
 -- --------------------------------------------------------
 
@@ -72,7 +72,7 @@ CREATE TABLE `cart` (
   `date_created` datetime NOT NULL DEFAULT current_timestamp(),
   `status` int(11) DEFAULT 0,
   `billID` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ;
 
 --
 -- Dumping data for table `cart`
@@ -96,7 +96,7 @@ CREATE TABLE `category` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `image` varchar(500) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ;
 
 --
 -- Dumping data for table `category`
@@ -128,7 +128,7 @@ CREATE TABLE `product` (
   `post_img` varchar(255) NOT NULL,
   `quantity` int(11) NOT NULL,
   `hide` tinyint(1) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ;
 
 --
 -- Dumping data for table `product`
@@ -164,7 +164,7 @@ INSERT INTO `product` (`id`, `id_provider`, `name`, `price`, `description`, `dat
 CREATE TABLE `product_category` (
   `id_product` int(11) NOT NULL,
   `id_category` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ;
 
 --
 -- Dumping data for table `product_category`
@@ -194,7 +194,7 @@ CREATE TABLE `user` (
   `role` int(11) NOT NULL,
   `date_created` datetime NOT NULL DEFAULT current_timestamp(),
   `img` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ;
 
 --
 -- Dumping data for table `user`
@@ -216,7 +216,7 @@ CREATE TABLE `wish_list` (
   `id` int(11) NOT NULL,
   `userID` int(11) NOT NULL,
   `productID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ;
 
 --
 -- Dumping data for table `wish_list`
