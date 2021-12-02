@@ -3,10 +3,20 @@
     include 'includes/header.php'; 
     include 'classes/category.php';
 
-    $category = new Category($conn);
-    $category->getList();
-    $category->getAllProducts();
+    
     //echo '<pre>' , var_dump($category->productList->productList) , '</pre>';
+
+    if (isset($_GET['categoryID'])) {
+      $category = new Category($conn);
+      $category->getList();
+      $category->id = $_GET['categoryID'];
+      $category->getProductsByFilter();
+    }
+    else {
+      $category = new Category($conn);
+      $category->getList();
+      $category->getAllProducts();
+    }
 ?>
 
 

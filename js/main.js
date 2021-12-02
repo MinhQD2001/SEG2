@@ -72,6 +72,7 @@ function updateTotalPrice(userID) {
 function filterByCategory(categoryID) {
     var view = document.getElementById('category');
 
+    console.log('HELLO');
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "includes/filterCategory.php", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

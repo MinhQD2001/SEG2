@@ -207,28 +207,28 @@
               <a class="nav-link" href="ShopAll.php">Shop All</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" onclick="filterByCategory(1)">Computer</a>
+              <a class="nav-link" href="ShopAll.php?categoryID=1">Computer</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" onclick="filterByCategory(2)">Tablets</a>
+              <a class="nav-link" href="ShopAll.php?categoryID=2"> Tablets</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" onclick="filterByCategory(3)">Drone & Camera</a>
+              <a class="nav-link" href="ShopAll.php?categoryID=3">Drone & Camera</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" onclick="filterByCategory(4)">Audio</a>
+              <a class="nav-link" href="ShopAll.php?categoryID=4">Audio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" onclick="filterByCategory(5)">Mobile</a>
+              <a class="nav-link" href="ShopAll.php?categoryID=5">Mobile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" onclick="filterByCategory(6)">T.V & Cinema</a>
+              <a class="nav-link" href="ShopAll.php?categoryID=6">T.V & Cinema</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" onclick="filterByCategory(7)">Wearable Tech</a>
+              <a class="nav-link" href="ShopAll.php?categoryID=7">Wearable Tech</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" onclick="filterByCategory(8)">Sale</a>
+              <a class="nav-link" href="ShopAll.php?categoryID=8">Sale</a>
             </li>
           </ul>
           </div>
