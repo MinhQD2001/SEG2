@@ -2,11 +2,37 @@
     include 'config.php';
     include 'includes/header.php';
     include 'classes/cartItem.php';
+    include 'classes/bill.php';
 
     $cartList = new CartItem($conn);
     $cartList->getProductListByUserID($_SESSION['user_id']);
     $cartList->userID = $_SESSION['user_id'];
     $cartList->getTotalPrice();
+
+    // echo '<pre>' , var_dump($cartList->cartList) , '</pre>';
+
+    // $cartList->cartList
+    // 0: provider Name;
+    // 1: product description;
+    // 2: productimage;
+    // 3: product name;
+    // 4: product quantity;
+    // 5: product price;
+    // 6: product summary;
+    // 7: cart ID;
+    // 8: user ID;
+
+    if (isset($_POST['checkout'])) {
+      $bill = new Bill($conn);
+      $bill->fname = $_POST['fname'];
+      $bill->lname = $_POST['lname'];
+      $bill->email = $_POST['email'];
+      $bill->phone = $_POST['phone'];
+      $bill->information = $_POST['information'];
+      $bill->address = $_POST['address'];
+      $bill->createBill();
+      $cartList->checkoutCart($bill->id);
+    }
     
 ?>
 
@@ -135,18 +161,18 @@ a.card-link-secondary.small.text-uppercase {
                     ></button>
                 </div>
                 <div class="modal-body">
-                <form>
+                <form id="post"  action="cart.php" method="POST">
                     <!-- 2 column grid layout with text inputs for the first and last names -->
                     <div class="row mb-4">
                         <div class="col">
                         <div class="form-outline">
-                            <input type="text" id="form6Example1" class="form-control" />
+                            <input name="fname" type="text" id="form6Example1" class="form-control" />
                             <label class="form-label" for="form6Example1">First name</label>
                         </div>
                         </div>
                         <div class="col">
                         <div class="form-outline">
-                            <input type="text" id="form6Example2" class="form-control" />
+                            <input name="lname" type="text" id="form6Example2" class="form-control" />
                             <label class="form-label" for="form6Example2">Last name</label>
                         </div>
                         </div>
@@ -154,31 +180,25 @@ a.card-link-secondary.small.text-uppercase {
 
                     <!-- Text input -->
                     <div class="form-outline mb-4">
-                        <input type="text" id="form6Example3" class="form-control" />
-                        <label class="form-label" for="form6Example3">Company name</label>
-                    </div>
-
-                    <!-- Text input -->
-                    <div class="form-outline mb-4">
-                        <input type="text" id="form6Example4" class="form-control" />
+                        <input name="address" type="text" id="form6Example4" class="form-control" />
                         <label class="form-label" for="form6Example4">Address</label>
                     </div>
 
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                        <input type="email" id="form6Example5" class="form-control" />
+                        <input name="email" type="email" id="form6Example5" class="form-control" />
                         <label class="form-label" for="form6Example5">Email</label>
                     </div>
 
                     <!-- Number input -->
                     <div class="form-outline mb-4">
-                        <input type="number" id="form6Example6" class="form-control" />
+                        <input name="phone" type="text" id="form6Example6" class="form-control" />
                         <label class="form-label" for="form6Example6">Phone</label>
                     </div>
 
                     <!-- Message input -->
                     <div class="form-outline mb-4">
-                        <textarea class="form-control" id="form6Example7" rows="4"></textarea>
+                        <textarea name="information" class="form-control" id="form6Example7" rows="4"></textarea>
                         <label class="form-label" for="form6Example7">Additional information</label>
                     </div>
 
@@ -195,7 +215,7 @@ a.card-link-secondary.small.text-uppercase {
                     </div>
 
                     <!-- Submit button -->
-                    <button type="submit" class="btn btn-primary btn-block mb-2">Make Purchase</button>
+                    <button name="checkout" type="submit" class="btn btn-primary btn-block mb-2">Make Purchase</button>
                     </form>                   
                 </div>
                 <div class="modal-footer">

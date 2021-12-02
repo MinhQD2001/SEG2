@@ -147,7 +147,14 @@
             $this->total = $stmt->get_result()->fetch_all()[0][0];
         }
 
-
+        public function checkoutCart ($billID) {
+            $sql = "UPDATE Cart SET status = 2, billID = ? WHERE id = ?";
+            $stmt = $this->conn->prepare($sql);
+            foreach ($this->cartList as $cart) {
+                $stmt->bind_param('ii', $billID, $cart[7]);
+                $stmt->execute();
+            }
+        }
 
 
     }
