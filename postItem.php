@@ -3,7 +3,6 @@
   include 'includes/header.php';
   include 'includes/profilebody.php';
   include 'classes/category.php';
-  include 'classes/product.php';
 
   $category = new Category($conn);
   $category->getList();
