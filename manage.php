@@ -5,8 +5,9 @@
     
 ?>
 
-
-      <div class="card wish-list mb-3">
+<div class="manager">
+    <div class="container p-lg-4">
+    <div class="card wish-list mb-3">
         <div class="card-body">
 
           <h5 class="mb-4">Date: </h5> 
@@ -263,8 +264,11 @@
 
         </div>
       </div>
-      <!-- Card -->
 
+    </div>
+</div>
+
+ 
 
 
 <?php 
