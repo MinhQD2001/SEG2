@@ -58,11 +58,11 @@
                         </li>
                         <hr>
                         <li class="nav-item">
-                        <a class="nav-link" href="#">My Account</a>
+                        <a class="nav-link" href="profile.php">My Account</a>
                         </li>
                         <hr>
                         <li class="nav-item">
-                        <a class="nav-link" href="#">My Wishlist</a>
+                        <a class="nav-link" href="history.php">My history</a>
                         </li>
                     </ul>
                     </div>
