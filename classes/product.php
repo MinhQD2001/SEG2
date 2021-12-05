@@ -54,7 +54,7 @@
         }
 
         public function getList() {
-            $sql = "SELECT * FROM product WHERE hide = 0";
+            $sql = "SELECT * FROM product WHERE hide = 1";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
             $result = $stmt->get_result();
@@ -83,9 +83,9 @@
                             </div>
                         </div>
                     ';
-                    $i += 2;
+                    $i += 1;
                 }
-                if ($i == 2 ) {
+                elseif ($i == 2 ) {
                     $output .= '
                     <div class="carousel-item " data-mdb-interval="10000">
                     <div class="row"> 
@@ -142,7 +142,7 @@
         }
         
         public function getProductByCategory($categoryID) {
-            $sql = 'SELECT p.id, p.id_provider, p.name, p.price, p.description, p.date_created, p.post_img, p.quantity, p.hide FROM product p JOIN product_category pc ON p.id = pc.id_product  JOIN category c ON pc.id_category = c.id WHERE p.hide = 0 AND c.id = ?';
+            $sql = 'SELECT p.id, p.id_provider, p.name, p.price, p.description, p.date_created, p.post_img, p.quantity, p.hide FROM product p JOIN product_category pc ON p.id = pc.id_product  JOIN category c ON pc.id_category = c.id WHERE p.hide = 1 AND c.id = ?';
             $stmt = $this->conn->prepare($sql);
             $stmt->bind_param('i', $categoryID);
             $stmt->execute();
@@ -156,7 +156,7 @@
             $stmt->execute();
             $result = $stmt->get_result()->fetch_all();
 
-            $sql = 'select * from product p join product_category pc on p.id = pc.id_product where pc.id_category = ?';
+            $sql = 'select * from product p join product_category pc on p.id = pc.id_product where pc.id_category = ? and p.hide = 1';
             $stmt = $this->conn->prepare($sql);
             $stmt->bind_param('i', $result[0][0]);
             $stmt->execute();
@@ -257,7 +257,7 @@
         }
 
         public function getProductFromWishList($userID) {
-            $sql = "select * from product p join wish_list wl on p.id = wl.productID where wl.userID = ?";
+            $sql = "select * from product p join wish_list wl on p.id = wl.productID where wl.userID = ? and p.hide = 1";
             $stmt = $this->conn->prepare($sql);
             $stmt->bind_param('i', $userID);
             $stmt->execute();
@@ -322,6 +322,60 @@
             }
             echo $output;
         }
+
+        public function getProductInPending() {
+            $sql = "SELECT P.post_img, P.name, U.name, C.name, P.price, P.description, P.date_created, P.quantity, P.id FROM product P JOIN user U ON P.id_provider = U.id JOIN product_category PC ON P.id = PC.id_product JOIN category C ON PC.id_category = C.id WHERE hide = 0";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            $this->productList = $stmt->get_result()->fetch_all();
+        }
+
+        public function outputProductInPending() {
+            $output = '';
+            foreach($this->productList as $product) {
+                $output .= '
+                <div class="row mb-4">
+                <div class="col-md-5 col-lg-3 col-xl-3">
+                  <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
+                    <img class="img-fluid w-100"
+                      src=" ' . $product[0] . ' " alt="Sample">
+                    <a href="#!">
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-7 col-lg-9 col-xl-9">
+                  <div>
+                    <div class="d-flex justify-content-between">
+                      <div>
+                        <h5>Product Name: ' . $product[1] . '</h5>
+                        <p>Author: <span class="author-name" style="color: #b23cfd;"><strong> ' . $product[2] . '</strong></span></p>
+                        <p class="mb-3 text-muted text-uppercase small"><strong>Category:</strong> ' . $product[3] . '</p>
+                        <p class="mb-2 text-muted text-uppercase small"><strong>Price</strong>: $' . $product[4] . '</p>
+                        <p class="mb-2 text-muted text-uppercase small"><strong>Quantity</strong>: $' . $product[7] . '</p>
+                        <p class="mb-3 text-muted text-uppercase small"><strong>Description</strong>: ' . $product[5] . '</p>
+                        <p class="mb-3 text-muted text-uppercase small"><strong>Date created</strong>: ' . $product[6] . '</p>  <!-- XUẤT NGÀY SẢN PHẨM ĐƯỢC TẠO -->
+                      </div>
+                      <div>
+                      </div>
+                    </div>
+                <button class="btn btn-danger" onclick="confirmProduct('. $product[8] .',2)"><i class="fa fa-trash" aria-hidden="true"></i> Refuse</button>
+                <button class="btn btn-success" onclick="confirmProduct('. $product[8] .',1)"><i class="fas fa-check"></i> Confirm</button>
+                  </div>
+                </div>
+              </div>
+              <hr class="mb-4">
+                ';
+            }
+            echo $output;
+        }
+
+        public function confirmProduct($i) {
+            $sql = "UPDATE product SET hide = ? WHERE id = ?";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param('ii', $i, $this->id);
+            $stmt->execute();
+        }
+
     }
 
 ?>

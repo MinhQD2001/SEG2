@@ -103,6 +103,7 @@
               <li class="nav-item">
                 <?php if ($_SESSION['loggedin'] == true): ?>  
                   <a class="nav-link" href="#"><i class="fas fa-user"></i> <?php echo $_SESSION['user_name']; ?> </a>
+                  <a class="nav-link" href="manage.php"><i class="fas fa-heart"></i> Product Management </a>  
                 <?php else: ?>
                   <a class="nav-link" href="login.php"><i class="fas fa-user"></i> Log In </a>
                 <?php endif; ?>                

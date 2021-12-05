@@ -110,6 +110,22 @@ function addToWishList(userID, productID) {
     xhr.send('userID=' + userID + '&productID=' + productID);
 }
 
+function confirmProduct(productID, type) {
+    console.log('confirm');
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "includes/confirmProduct.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onload = function() {
+        if (this.status == 200) {    
+            var pendingList = document.getElementById('pendingList');
+            pendingList.innerHTML = this.responseText;
+            console.log(this.responseText);
+        }
+    }
+    xhr.send('productID=' + productID + '&confirm=' + type);
+}
+
+
 
 jQuery(document).ready(function($){
     
