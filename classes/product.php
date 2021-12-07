@@ -376,6 +376,70 @@
             $stmt->execute();
         }
 
+        public function getProductHistory() {
+            $sql = "select distinct b.id from cart c join bill b on b.id = c.billID where c.userID = ? ";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param('i', $this->id);
+            $stmt->execute();
+            $results = $stmt->get_result()->fetch_all();        
+
+            if (count($results) > 0) {
+                foreach($results as $id) {
+                    $sql = "select p.post_img, p.name, u.name, ca.name, p.price, p.description, b.date_created, c.quantity from product p join product_category pc on p.id = pc.id_product join category ca on pc.id_category = ca.id join cart c on c.productID = p.id join `user` u on p.id_provider = u.id join bill b on c.billID = b.id where c.billID = ?";
+                    $stmt = $this->conn->prepare($sql);
+                    $stmt->bind_param('i', $id[0]);
+                    $stmt->execute();
+                    $this->productList = $stmt->get_result()->fetch_all();
+                    $this->outputHistory();     
+                }
+            }
+            else {
+                echo '<h1>Yo</h1>';
+            }
+
+        }
+
+        public function outputHistory() {
+            $output = '';
+            foreach($this->productList as $product) {
+                $output .= '
+                <div class="row mb-4">
+                <div class="col-md-5 col-lg-3 col-xl-3">
+                  <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
+                    <img class="img-fluid w-100"
+                      src="'. $product[0] .'" alt="Sample">
+                    <a href="#!">
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-7 col-lg-9 col-xl-9">
+                  <div>
+                    <div class="d-flex justify-content-between">
+                      <div>
+                        <h5>'. $product[1] .'</h5>
+                        <p>Author: <span class="author-name" style="color: #b23cfd;"><strong>'. $product[2] .'</strong></span></p>
+                        <p class="mb-3 text-muted text-uppercase small">Category: '. $product[3] .'</p>
+                        <p class="mb-2 text-muted text-uppercase small">Price: '. $product[4] .'</p>
+                        <p class="mb-3 text-muted text-uppercase small">Description: '. $product[5] .'</p>
+                        <p class="mb-3 text-muted text-uppercase small">Date: '. $product[6] .'</p> <!-- Ngày sản phẩm được mua -->
+                      </div>
+                      <div>
+                        <div class="def-number-input number-input safari_only mb-0 w-100">
+                        <p>Quantity</p>
+                          <input class="quantity" min="0" name="quantity" value="'. $product[7] .'" type="number" readonly>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr class="mb-4">
+                ';
+                
+            }
+            echo $output;
+        }
+
     }
 
 ?>

@@ -5,6 +5,9 @@
         public $id;
         public $name;
         public $email;
+        public $addr;
+        public $dob;
+        public $phone;
         public $password;
         public $password_hash;
         public $role;
@@ -153,6 +156,13 @@
             if ($result->num_rows == 1) {
                 $this->user = $result->fetch_assoc();
             }
+        }
+
+        public function updateProfile() {
+            $sql = "UPDATE user SET name = ?, addr = ?, dob = ?, phone = ?, information = ? WHERE id = ?";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param('sssssi', $this->name, $this->addr, $this->dob, $this->phone, $this->information, $this->id);
+            $stmt->execute();
         }
 
     }
