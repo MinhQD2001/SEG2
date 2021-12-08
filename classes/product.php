@@ -440,6 +440,16 @@
             echo $output;
         }
 
+        public function getOwnProducts($userID) {
+            $sql = "SELECT * FROM PRODUCT WHERE id_provider = ?";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param('i', $userID);
+            $stmt->execute();
+            $this->productList = $stmt->get_result()->fetch_all();
+
+
+        }
+
     }
 
 ?>

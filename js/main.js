@@ -1,5 +1,17 @@
 console.log("hello");
 
+function confirmRequest(id, value) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "includes/????.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onload = function() {
+        if (this.status == 200) {            
+            alert(this.responseText);            
+        }
+    }
+    xhr.send("requestID="+id+"&value="+value);
+}
+
 function upgradeRole(id, requiredRole) {
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "includes/upgradeRole.php", true);
@@ -13,6 +25,9 @@ function upgradeRole(id, requiredRole) {
 }
 
 
+function refreshPage() {
+    location.reload();
+}
 
 
 

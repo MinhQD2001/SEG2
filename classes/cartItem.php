@@ -70,7 +70,7 @@
                                     <div>
                                         <h5>' . $item[3] . '</h5>
                                         <p>Author: <span class="author-name" style="color: #b23cfd;"><strong>' . $item[0] . '</strong></span></p>
-                                        <p class="mb-3 text-muted text-uppercase small">Description: </p>
+                                        <p class="mb-3 text-muted text-uppercase small">Description: ' . $item[1] . '</p>
                                     </div>
                                     <div>
                                         <p>Quantity</p>

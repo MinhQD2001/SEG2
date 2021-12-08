@@ -7,7 +7,7 @@
   $category = new Category($conn);
   $category->getList();
 
-  echo '<pre>' , var_dump($_SESSION) , '</pre>';
+  //echo '<pre>' , var_dump($_SESSION) , '</pre>';
 
   if (isset($_POST['post_product'])) {
     $new_Product = new Product($conn);

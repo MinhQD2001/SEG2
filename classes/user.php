@@ -163,6 +163,8 @@
             $stmt = $this->conn->prepare($sql);
             $stmt->bind_param('sssssi', $this->name, $this->addr, $this->dob, $this->phone, $this->information, $this->id);
             $stmt->execute();
+            
+            $_SESSION['user_name'] = $this->name;
         }
 
         public function sendRequestRole($requiredRole) {
@@ -182,9 +184,6 @@
                 $stmt->execute();
                 echo 'ok';
             }
-
-            
-
             
         }
 

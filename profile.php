@@ -7,7 +7,7 @@
     $user = new User($conn);
     $user->id = $_SESSION['user_id'];
     $user->getUser();
-    //echo '<pre>' , var_dump($user->user) , '</pre>';
+    echo '<pre>' , var_dump($_SESSION) , '</pre>';
     $role = '';
     if ($user->user['role'] >= 3) {
         $role = 'Your role is normal user!';
@@ -39,8 +39,10 @@
 <!-- MẤY CÁI NHƯ NAME, EMAIL CÓ SẴN TRONG DB THÌ CỨ XUẤT RA CÒN CÁI NÀO CHƯA CÓ THÌ ĐỂ USER TỰ BỔ SUNG -->
 <div class="profile bg-light mb-5">
     <div class="container p-lg-5">
-        <?php if($_SESSION['user_role'] >= 3): ?>
+        <?php if($_SESSION['user_role'] == 3): ?>
             <button  class="btn btn-primary" onclick="upgradeRole(<?php echo $_SESSION['user_id']; ?>, 2)">Request To Upgrade Role To Seller </button>
+            <button  class="btn btn-primary" onclick="upgradeRole(<?php echo $_SESSION['user_id']; ?>, 1)">Request To Upgrade Role To Manager </button>
+        <?php elseif ($_SESSION['user_role'] == 2): ?>
             <button  class="btn btn-primary" onclick="upgradeRole(<?php echo $_SESSION['user_id']; ?>, 1)">Request To Upgrade Role To Manager </button>
             <button  class="btn btn-primary" onclick="upgradeRole(<?php echo $_SESSION['user_id']; ?>, 3)">Request To Upgrade Role To Normal User </button>
         <?php endif; ?>
@@ -116,7 +118,7 @@
                 <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
                 Close
                 </button>
-                <button name="save" type="submit" class="btn btn-primary">Save changes</button>
+                <button name="save" type="submit" class="btn btn-primary" onclick="refreshPage()">Save changes</button>
             </div>
             </div>
         </div>
