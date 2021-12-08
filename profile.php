@@ -9,7 +9,7 @@
     $user->getUser();
     //echo '<pre>' , var_dump($user->user) , '</pre>';
     $role = '';
-    if ($user->user['role'] == 3) {
+    if ($user->user['role'] >= 3) {
         $role = 'Your role is normal user!';
     } elseif ($user->user['role'] == 2) {
         $role = 'Your role is seller!';
@@ -39,7 +39,12 @@
 <!-- MẤY CÁI NHƯ NAME, EMAIL CÓ SẴN TRONG DB THÌ CỨ XUẤT RA CÒN CÁI NÀO CHƯA CÓ THÌ ĐỂ USER TỰ BỔ SUNG -->
 <div class="profile bg-light mb-5">
     <div class="container p-lg-5">
-        <form id="profile" action="profile.php" method="POST">
+        <?php if($_SESSION['user_role'] >= 3): ?>
+            <button  class="btn btn-primary" onclick="upgradeRole(<?php echo $_SESSION['user_id']; ?>, 2)">Request To Upgrade Role To Seller </button>
+            <button  class="btn btn-primary" onclick="upgradeRole(<?php echo $_SESSION['user_id']; ?>, 1)">Request To Upgrade Role To Manager </button>
+            <button  class="btn btn-primary" onclick="upgradeRole(<?php echo $_SESSION['user_id']; ?>, 3)">Request To Upgrade Role To Normal User </button>
+        <?php endif; ?>
+        <form class="mt-4" id="profile" action="profile.php" method="POST">
 
             <!-- Text input -->
         <div class="form-outline mb-4">

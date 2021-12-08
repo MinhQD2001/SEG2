@@ -165,6 +165,29 @@
             $stmt->execute();
         }
 
+        public function sendRequestRole($requiredRole) {
+            $sql = "SELECT * FROM request_role WHERE userID = ? and checked = 0";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param('i', $this->id);
+            $stmt->execute();
+            $results = $stmt->get_result()->fetch_all();
+
+
+            if (count($results) > 0) {
+                echo 'Your request has existed!';                
+            } else {
+                $sql = "INSERT INTO request_role (userID, roleBefore, requiredRole) values (?, ?, ?)";
+                $stmt = $this->conn->prepare($sql);
+                $stmt->bind_param('iii', $this->id, $this->role, $requiredRole);
+                $stmt->execute();
+                echo 'ok';
+            }
+
+            
+
+            
+        }
+
     }
 
 ?>

@@ -1,5 +1,16 @@
 console.log("hello");
 
+function upgradeRole(id, requiredRole) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "includes/upgradeRole.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onload = function() {
+        if (this.status == 200) {            
+            alert(this.responseText);            
+        }
+    }
+    xhr.send("userID="+id+"&requiredRole="+requiredRole);
+}
 
 
 

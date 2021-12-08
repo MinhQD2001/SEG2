@@ -53,10 +53,12 @@
                         <a class="nav-link" href="ShopAll.php">My Orders</a>
                         </li>
                         <hr>
-                        <li class="nav-item">
-                        <a class="nav-link" href="postItem.php">Post Item</a>
-                        </li>
-                        <hr>
+                        <?php if($_SESSION['user_role'] < 3): ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="postItem.php">Post Item</a>
+                            </li>
+                            <hr>
+                        <?php endif; ?>
                         <li class="nav-item">
                         <a class="nav-link" href="profile.php">My Account</a>
                         </li>
