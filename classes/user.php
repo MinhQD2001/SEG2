@@ -182,7 +182,7 @@
                 $stmt = $this->conn->prepare($sql);
                 $stmt->bind_param('iii', $this->id, $this->role, $requiredRole);
                 $stmt->execute();
-                echo 'ok';
+                echo 'Your request is sent';
             }
             
         }

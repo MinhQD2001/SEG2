@@ -105,6 +105,8 @@
                   <a class="nav-link" href="#"><i class="fas fa-user"></i> <?php echo $_SESSION['user_name']; ?> </a>
                   <?php if ($_SESSION['user_role'] == 1): ?>
                     <a class="nav-link" href="manage.php"><i class="fas fa-heart"></i> Product Management </a>  
+                  <?php elseif ($_SESSION['user_role'] == 0): ?>
+                    <a class="nav-link" href="Admin.php"><i class="fas fa-heart"></i> Request Management </a>  
                   <?php endif; ?>                
                 <?php else: ?>
                   <a class="nav-link" href="login.php"><i class="fas fa-user"></i> Log In </a>

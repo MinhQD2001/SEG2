@@ -7,7 +7,7 @@
     $user = new User($conn);
     $user->id = $_SESSION['user_id'];
     $user->getUser();
-    echo '<pre>' , var_dump($_SESSION) , '</pre>';
+    // echo '<pre>' , var_dump($_SESSION) , '</pre>';
     $role = '';
     if ($user->user['role'] >= 3) {
         $role = 'Your role is normal user!';

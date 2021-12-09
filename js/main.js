@@ -1,15 +1,27 @@
 console.log("hello");
 
-function confirmRequest(id, value) {
+function deleteProduct(id) {
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "includes/????.php", true);
+    xhr.open("POST", "includes/deleteProduct.php", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.onload = function() {
         if (this.status == 200) {            
             alert(this.responseText);            
         }
     }
-    xhr.send("requestID="+id+"&value="+value);
+    xhr.send("productID="+id);
+}
+
+function confirmRequest(id, value, before, after, ) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "includes/confirmRequest.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onload = function() {
+        if (this.status == 200) {            
+            alert(this.responseText);            
+        }
+    }
+    xhr.send("requestID="+id+"&value="+value+"&before="+before+"&after="+after);
 }
 
 function upgradeRole(id, requiredRole) {

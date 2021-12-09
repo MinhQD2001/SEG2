@@ -13,18 +13,20 @@
         public $product;
         public $conn;
         public $errors = [];
+        public $category;
 
         public function __construct($conn) {
             $this->conn = $conn;
         }
 
-        public function checkRegistration ($id_provider, $name, $price, $quantity, $description, $post_img) {
+        public function checkRegistration ($id_provider, $name, $price, $quantity, $description, $post_img, $category) {
             $this->name = $name;
             $this->price = $price;
             $this->quantity = $quantity;
             $this->id_provider = $id_provider;
             $this->description = $description;
             $this->post_img = $post_img;
+            $this->category = $category;
 
             // CHECK NAME'S LENGTH
             if (strlen($this->name) < 1) {
@@ -51,6 +53,13 @@
             $stmt = $this->conn->prepare($sql);
             $stmt->bind_param('isissi', $this->id_provider, $this->name, $this->price, $this->description, $this->post_img, $this->quantity);
             $stmt->execute();
+            $productID = $stmt->insert_id;
+            
+            $sql = "INSERT INTO product_category (id_product, id_category) values (?,?)";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param('ii', $productID, $this->category);
+            $stmt->execute();
+
         }
 
         public function getList() {
@@ -441,13 +450,127 @@
         }
 
         public function getOwnProducts($userID) {
-            $sql = "SELECT * FROM PRODUCT WHERE id_provider = ?";
+            $sql = "SELECT * FROM PRODUCT WHERE id_provider = ? and hide = 1";
             $stmt = $this->conn->prepare($sql);
             $stmt->bind_param('i', $userID);
             $stmt->execute();
             $this->productList = $stmt->get_result()->fetch_all();
+        }
 
+        public function outputOwnProducts() {
+            $output = '';
+            foreach($this->productList as $item) {
+                $output .= '
+                    <div class="col-md-4">
+                    <div class="bg-image hover-overlay hover-zoom"> <a href="item.php"> 
+                    <img src=" ' . $item[6] . '" class="w-100"/>
+                    </a>
+                    </div>
+                    <hr>
+                    <div class="product-info" >
+                        <p>Product name: ' . $item[2] . '</p>
+                        <p>Price: <span style="color: #b23cfd;"><strong><i class="fas fa-dollar-sign"></i>' . $item[3] . '</strong></span></p>
+                    <div class="product-btn mb-5">
+                        <div class="row">
+                        <div class="col-md-6">
+                            <!-- Button modal -->
+                        <button
+                            type="button"
+                            class="btn btn-primary btn-block"
+                            data-mdb-toggle="modal"
+                            data-mdb-target="#productBtn"
+                        >
+                            Edit
+                        </button>
 
+                        <!-- Modal -->
+                        <div
+                            class="modal fade"
+                            id="productBtn"
+                            tabindex="-1"
+                            aria-labelledby="productBtnLabel"
+                            aria-hidden="true"
+                        >
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="productBtnLabel">Edit Your Product</h5>
+                                <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-mdb-dismiss="modal"
+                                    aria-label="Close"
+                                ></button>
+                                </div>
+                                <div class="modal-body">
+                                <form id="post"  action="postItem.php" method="POST">
+                                    <div class="mb-3">
+                                    <label for="" class="form-label">Product Name</label>
+                                    <input name="name" type="text" class="form-control" id="" aria-describedby="emailHelp" value="'. $item[2] .'">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Enter Price</label>
+                                    <input name="price" type="number" class="form-control" id=""  min="1"  value="'. $item[3] .'" style="width: 100px;">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Quantity</label>
+                                    <input name="quantity" type="number" class="form-control" id=""  min="1" value="'. $item[7] .'" style="width: 100px;">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Description</label>
+                                    <textarea name="description" rows="" cols="" type="text" class="form-control" id="">'. $item[4] .'</textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Choose image link</label>
+                                    <input name="post_img" type="text" class="form-control" id="" value="'. $item[6] .'" >
+                                    <img id="blah" src="'. $item[6] .'"
+                                    class="img-fluid" />
+                                </div>
+                                <button name="save" type="submit" class="btn btn-primary">Save changes</button>
+                                <div class="float-end">
+                                    <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+                                    Close
+                                    </button>
+                                </div>
+                                <input name="id" type="text" value="'. $item[0] .'" hidden>
+                                </form>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-md-6">
+                        <button
+                            type="button"
+                            class="btn btn-danger btn-block" 
+                            onclick="deleteProduct('. $item[0] .')"
+                        >
+                            Delete
+                        </button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                ';
+            }
+            echo $output;
+        }
+
+        public function deleteProduct() {
+            $sql = "UPDATE product set hide = 2 where id = ?";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param('i', $this->id);
+            $stmt-> execute();
+            echo 'successful deleting';
+        }
+
+        public function updateProduct() {
+            $sql = "UPDATE product set name = ?, price = ?, description = ?, quantity = ?, post_img = ? WHERE id = ?";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param('sisisi', $this->name, $this->price, $this->description, $this->quantity, $this->post_img, $this->id);
+            $stmt->execute();
+            echo 'sucessful updateing';
         }
 
     }

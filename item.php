@@ -148,9 +148,10 @@
                     padding-right: 17%; margin-right: 5px" onclick="addToCart()">Add to Cart</button>
                     <button type="button" class="btn btn-outline-secondary btn-lg btn-rounded" onclick="addToWishList(<?php echo $_SESSION['user_id']; ?>,<?php echo $product->product[0][0]; ?> )"><i class="fas fa-heart"></i></button>  
                 </div>
-                <div class="buy-now">
+                <div class="buy-now"><a href="cart.php">
                     <button type="button" class="btn btn-dark btn-lg btn-rounded font-weight-lighter" style="padding-left: 25%;
-                    padding-right: 25%;">Buy Now</button>
+                    padding-right: 25%;"onclick="addToCart()"> Buy Now</button>
+                    </a>
                 </div>       
         </div>
         <div class="item-accordion">
